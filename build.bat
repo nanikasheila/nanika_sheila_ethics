@@ -20,11 +20,12 @@ REM === Paths (adjust if needed) ===
 set "SRC_MD=src\main.md"
 set "META=src\pandoc\metadata.yaml"
 set "STYLE=src\css\style.css"
-set "ASSET=src\assets\flow.drawio.svg"
+set "ASSETS_DIR=src\assets"
 
 set "BUILD_DIR=build"
 set "HTML_OUT=%BUILD_DIR%\nanika_sheila_ethics.html"
 set "EPUB_OUT=%BUILD_DIR%\nanika_sheila_ethics.epub"
+set "ASSETS_OUT=%BUILD_DIR%\assets"
 
 REM === Create output dirs ===
 if not exist "%BUILD_DIR%" mkdir "%BUILD_DIR%"
@@ -36,11 +37,16 @@ if errorlevel 1 (
   exit /b 1
 )
 
-REM === Copy ASSET for web output (so paths never break) ===
-copy /y "%ASSET%" "%BUILD_DIR%\flow.drawio.svg" >nul
-if errorlevel 1 (
-  echo [ERROR] Failed to copy flow.drawio.svg
-  exit /b 1
+REM === Copy ASSETS for web/epub output (so paths never break) ===
+if exist "%ASSETS_DIR%" (
+  if not exist "%ASSETS_OUT%" mkdir "%ASSETS_OUT%"
+  xcopy "%ASSETS_DIR%\*" "%ASSETS_OUT%\" /E /I /Y >nul
+  if errorlevel 4 (
+    echo [ERROR] Failed to copy assets from %ASSETS_DIR% to %ASSETS_OUT%
+    exit /b 1
+  )
+) else (
+  echo [WARN] Assets directory not found: %ASSETS_DIR%
 )
 
 REM === Build HTML ===
@@ -61,13 +67,16 @@ if errorlevel 1 (
 
 REM === Build EPUB ===
 pandoc "%SRC_MD%" ^
-  --from=markdown+hard_line_breaks ^
+  --resource-path=src ^
+  --number-sections=false ^
+  --from=markdown+hard_line_breaks+auto_identifiers+ascii_identifiers ^
   --wrap=preserve ^
   --metadata-file="%META%" ^
   --css=src\css\style.css ^
-  --toc --toc-depth=3 ^
-  --variable toc-title="–ÚŽŸ" ^
-  --split-level=2 ^
+  --shift-heading-level-by=-1 ^
+  --toc --toc-depth=2 ^
+  --metadata toc-title="–ÚŽŸ" ^
+  --split-level=1 ^
   --output "%EPUB_OUT%"
 if errorlevel 1 (
   echo [ERROR] pandoc EPUB build failed
