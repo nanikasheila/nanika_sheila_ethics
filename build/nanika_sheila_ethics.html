@@ -8,154 +8,6 @@
   <meta name="description" content="本書は、正しさを導く倫理ではない。 判断が破綻する地点を検知するための、倫理システムの記述である。" />
   <title>ナニカシイラの倫理</title>
   <style>
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -170,457 +22,8 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { color: #008000; } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { color: #008000; font-weight: bold; } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <style>
-  /* マテリアルデザイン風スタイルシート */
-  /* キーカラー: メイン(slateblue系), アクセント(濃いピンク系), ベース(青みがかった白) */
-
-  :root {
-      --primary-color: #6a5acd; /* slateblue */
-      --secondary-color: #ff1493; /* crimson (濃いピンク系) */
-      --background-color: #ffffff /* aliceblue */
-      --surface-color: #fdfdff;
-      --text-primary: #212121;
-      --text-secondary: #757575;
-      --divider-color: #e0e0e0;
-  }
-
-  body {
-      font-family: "Roboto", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
-      line-height: 1.7;
-      color: var(--text-primary);
-      background-color: var(--background-color);
-      margin: 0;
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--background-color);
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-  }
-
-  /* 見出し */
-  h1, h2, h3, h4, h5, h6 {
-      font-weight: 500;
-      line-height: 1.3;
-      color: var(--primary-color);
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-  }
-
-  h1 {
-      font-size: 2.125rem;
-      border-bottom: 2px solid var(--primary-color);
-      padding-bottom: 0.5em;
-      page-break-before: always;
-  }
-
-  h2 {
-      font-size: 1.875rem;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 0.5em;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-  }
-
-  h3 {
-      font-size: 1.5rem;
-      border-bottom: 1px solid var(--divider-color);
-      padding-bottom: 0.3em;
-      transition: border-color 0.3s ease;
-  }
-
-  h4 {
-      font-size: 1.25rem;
-  }
-
-  h5 {
-      font-size: 1.125rem;
-  }
-
-  h6 {
-      font-size: 1rem;
-  }
-
-  /* 段落 */
-  p {
-      margin: 1em 0;
-      text-align: justify;
-  }
-
-  /* 太字と斜体 */
-  strong {
-      color: var(--secondary-color);
-  }
-
-  em {
-      color: var(--secondary-color);
-  }
-
-  /* 取り消し線 */
-  del {
-      color: var(--text-secondary);
-  }
-
-  /* リンク */
-  a {
-      color: var(--primary-color);
-      text-decoration: none;
-      transition: opacity 0.2s ease;
-  }
-
-  a:hover {
-      text-decoration: underline;
-      opacity: 0.8;
-  }
-
-  a:focus {
-      outline: 2px solid var(--primary-color);
-      outline-offset: 2px;
-  }
-
-  /* 引用 */
-  blockquote {
-      margin: 1.5em 0;
-      padding: 1em 1.5em;
-      border-left: 4px solid var(--secondary-color);
-      background-color: rgba(255, 255, 255, 0.8);
-      font-style: italic;
-      color: var(--text-secondary);
-  }
-
-  /* ネストされた引用 */
-  blockquote blockquote {
-      border-left-color: var(--primary-color);
-      background-color: rgba(255, 255, 255, 0.9);
-      margin: 1em 0;
-      padding: 0.5em 1em;
-      font-style: normal;
-  }
-
-  /* コード */
-  code {
-      background-color: rgba(0, 0, 0, 0.05);
-      padding: 0.2em 0.4em;
-      border-radius: 3px;
-      font-family: "Roboto Mono", "Noto Sans Mono", monospace;
-      font-size: 0.9em;
-  }
-
-  pre {
-      background-color: #f5f5f5;
-      padding: 1em;
-      border-radius: 4px;
-      overflow-x: auto;
-      border: 1px solid var(--divider-color);
-  }
-
-  pre code {
-      background: none;
-      padding: 0;
-  }
-
-  /* リスト */
-  ul, ol {
-      margin: 1em 0;
-      padding-left: 2em;
-  }
-
-  li {
-      margin: 0.5em 0;
-  }
-
-  /* テーブル */
-  table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1em 0;
-      background-color: var(--surface-color);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-      overflow: hidden;
-      table-layout: fixed;
-      display: table;
-  }
-
-  th, td {
-      padding: 0.75em;
-      text-align: left;
-      border-bottom: 1px solid var(--divider-color);
-      word-wrap: break-word;
-  }
-
-  th {
-      background-color: var(--primary-color);
-      color: white;
-      font-weight: 500;
-  }
-
-  tr:nth-child(even) {
-      background-color: rgba(0, 0, 0, 0.02);
-  }
-
-  /* テーブル内の要素を幅いっぱいに */
-  td * {
-      width: 100%;
-      box-sizing: border-box;
-  }
-
-  /* 水平線 */
-  hr {
-      border: none;
-      height: 1px;
-      background-color: var(--divider-color);
-      margin: 2em 0;
-  }
-
-  /* 画像 */
-  img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  /* 目次 */
-  nav#TOC {
-      background-color: var(--surface-color);
-      padding: 1em;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2em;
-      font-size: 0.9em;
-  }
-
-  nav#TOC ul {
-      list-style: none;
-      padding: 0;
-      line-height: 1.4;
-  }
-
-  nav#TOC li {
-      margin: 0.3em 0;
-  }
-
-  nav#TOC a {
-      color: var(--text-primary);
-      text-decoration: none;
-      display: block;
-      padding: 0.25em 0;
-  }
-
-  nav#TOC a:hover {
-      background-color: rgba(106, 90, 205, 0.1);
-      border-radius: 4px;
-      padding-left: 0.5em;
-  }
-
-  /* タスクリスト */
-  .task-list-item {
-      list-style: none;
-  }
-
-  .task-list-item input[type="checkbox"] {
-      margin-right: 0.5em;
-  }
-
-  /* 数式 */
-  .math {
-      font-family: "Latin Modern Math", "STIX", serif;
-  }
-
-  /* フッター */
-  footer {
-      margin-top: 3em;
-      padding-top: 1em;
-      border-top: 1px solid var(--divider-color);
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 0.9em;
-  }
-
-  /* レスポンシブデザイン */
-  @media (max-width: 600px) {
-      body {
-          padding: 10px;
-      }
-
-      h1 {
-          font-size: 1.75rem;
-      }
-
-      h2 {
-          font-size: 1.5rem;
-      }
-
-      table {
-          font-size: 0.9em;
-      }
-  }
-
-  /* ダークモード対応 */
-  @media (prefers-color-scheme: dark) {
-      :root {
-          --background-color: #121212;
-          --surface-color: #1e1e1e;
-          --text-primary: #e0e0e0;
-          --text-secondary: #b0b0b0;
-          --divider-color: #333333;
-      }
-      body {
-          background-color: var(--background-color);
-          color: var(--text-primary);
-      }
-      h1, h2, h3, h4, h5, h6 {
-          color: var(--primary-color);
-      }
-      h2 {
-          background-color: var(--primary-color);
-          color: white;
-      }
-      blockquote {
-          background-color: rgba(30, 30, 30, 0.8);
-          color: var(--text-secondary);
-      }
-      table {
-          background-color: var(--surface-color);
-      }
-      th {
-          background-color: var(--primary-color);
-      }
-      nav#TOC {
-          background-color: var(--surface-color);
-      }
-  }
-
-  /* 印刷時の最適化強化 */
-  @media print {
-      html {
-          background-color: white;
-      }
-      body {
-          background-color: transparent;
-          color: black;
-          font-size: 12pt;
-          padding: 0;
-      }
-      p, h2, h3 {
-          orphans: 3;
-          widows: 3;
-      }
-      h2, h3, h4 {
-          page-break-after: avoid;
-      }
-      a {
-          color: black;
-          text-decoration: underline;
-      }
-      nav#TOC {
-          display: none;
-      }
-      img {
-          max-width: 100%;
-          page-break-inside: avoid;
-      }
-  }
-
-  /* スクロールバーのスタイル */
-  ::-webkit-scrollbar {
-      width: 8px;
-  }
-  ::-webkit-scrollbar-track {
-      background: var(--background-color);
-  }
-  ::-webkit-scrollbar-thumb {
-      background: var(--divider-color);
-      border-radius: 4px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-      background: var(--primary-color);
-  }
-
-  /* アクセシビリティの強化 */
-  @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-      }
-  }
-  </style>
-  <script defer=""
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
-  type="text/javascript"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header id="title-block-header">
@@ -630,201 +33,2110 @@
 <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">目次</h2>
 <ul>
-<li><a href="#ナニカシイラの倫理---markdownテストドキュメント"
-id="toc-ナニカシイラの倫理---markdownテストドキュメント">ナニカシイラの倫理
-- Markdownテストドキュメント</a>
+<li><a href="#序論" id="toc-序論">序論</a>
 <ul>
-<li><a href="#はじめに" id="toc-はじめに">はじめに</a></li>
-<li><a href="#見出しのテスト"
-id="toc-見出しのテスト">見出しのテスト</a></li>
-<li><a href="#テキストフォーマット"
-id="toc-テキストフォーマット">テキストフォーマット</a></li>
-<li><a href="#リスト" id="toc-リスト">リスト</a></li>
-<li><a href="#引用" id="toc-引用">引用</a></li>
-<li><a href="#コードブロック"
-id="toc-コードブロック">コードブロック</a></li>
-<li><a href="#リンクと画像" id="toc-リンクと画像">リンクと画像</a></li>
-<li><a href="#テーブル" id="toc-テーブル">テーブル</a></li>
-<li><a href="#水平線" id="toc-水平線">水平線</a></li>
-<li><a href="#脚注" id="toc-脚注">脚注</a></li>
-<li><a href="#定義リスト" id="toc-定義リスト">定義リスト</a></li>
-<li><a href="#強調ハイライト"
-id="toc-強調ハイライト">強調（ハイライト）</a></li>
-<li><a href="#html要素" id="toc-html要素">HTML要素</a></li>
-<li><a href="#数式mathjax対応の場合"
-id="toc-数式mathjax対応の場合">数式（MathJax対応の場合）</a></li>
-<li><a href="#目次テスト用の追加見出し"
-id="toc-目次テスト用の追加見出し">目次テスト用の追加見出し</a></li>
-<li><a href="#結論" id="toc-結論">結論</a></li>
+<li><a href="#本書の適用範囲と目的" id="toc-本書の適用範囲と目的">本書の適用範囲と目的</a></li>
 </ul></li>
+<li><a href="#第-1-部-世界モデル" id="toc-第-1-部-世界モデル">第 1 部　世界モデル</a>
+<ul>
+<li><a href="#第-1-章-人間と世界の前提条件" id="toc-第-1-章-人間と世界の前提条件">第 1 章　人間と世界の前提条件</a></li>
+<li><a href="#第-2-章-不可逆性と非対称性" id="toc-第-2-章-不可逆性と非対称性">第 2 章　不可逆性と非対称性</a></li>
+</ul></li>
+<li><a href="#第-2-部-倫理原理" id="toc-第-2-部-倫理原理">第 2 部　倫理原理</a>
+<ul>
+<li><a href="#第-3-章-評価軸としての不可逆影響" id="toc-第-3-章-評価軸としての不可逆影響">第 3 章　評価軸としての不可逆影響</a></li>
+<li><a href="#第-4-章-目的と正当化の分離" id="toc-第-4-章-目的と正当化の分離">第 4 章　目的と正当化の分離</a></li>
+<li><a href="#第-5-章-非対称リスクの否定" id="toc-第-5-章-非対称リスクの否定">第 5 章　非対称リスクの否定</a></li>
+<li><a href="#第-6-章-自由強制責任の分離" id="toc-第-6-章-自由強制責任の分離">第 6 章　自由・強制・責任の分離</a></li>
+</ul></li>
+<li><a href="#第-3-部-行為の生成と回収" id="toc-第-3-部-行為の生成と回収">第 3 部　行為の生成と回収</a>
+<ul>
+<li><a href="#第-7-章-判断と行為の生成" id="toc-第-7-章-判断と行為の生成">第 7 章　判断と行為の生成</a></li>
+<li><a href="#第-8-章-想定と限界" id="toc-第-8-章-想定と限界">第 8 章　想定と限界</a></li>
+<li><a href="#第-9-章-行為生成としての誠実" id="toc-第-9-章-行為生成としての誠実">第 9 章　行為生成としての誠実</a></li>
+<li><a href="#第-10-章-因果帰属としての責任" id="toc-第-10-章-因果帰属としての責任">第 10 章　因果帰属としての責任</a></li>
+<li><a href="#第-11-章-沈黙介入当事者性" id="toc-第-11-章-沈黙介入当事者性">第 11 章　沈黙・介入・当事者性</a></li>
+</ul></li>
+<li><a href="#第-4-部-運用の限界と勾配" id="toc-第-4-部-運用の限界と勾配">第 4 部　運用の限界と勾配</a>
+<ul>
+<li><a href="#第-12-章-例外という歪み" id="toc-第-12-章-例外という歪み">第 12 章　例外という歪み</a></li>
+<li><a href="#第-13-章-管理と自由制限" id="toc-第-13-章-管理と自由制限">第 13 章　管理と自由制限</a></li>
+<li><a href="#第-14-章-隔離切断排除" id="toc-第-14-章-隔離切断排除">第 14 章　隔離・切断・排除</a></li>
+</ul></li>
+<li><a href="#第-5-部-倫理システムの存続判断" id="toc-第-5-部-倫理システムの存続判断">第 5 部　倫理システムの存続判断</a>
+<ul>
+<li><a href="#第-15-章-倫理システムの更新破棄再設計" id="toc-第-15-章-倫理システムの更新破棄再設計">第 15 章　倫理システムの更新・破棄・再設計</a></li>
+</ul></li>
+<li><a href="#終章-結論を与えないという結論" id="toc-終章-結論を与えないという結論">終章　結論を与えないという結論</a></li>
+<li><a href="#付記" id="toc-付記">付記</a>
+<ul>
+<li><a href="#付記-1-信念の暫定性と倫理の距離" id="toc-付記-1-信念の暫定性と倫理の距離">付記 1 　信念の暫定性と倫理の距離</a></li>
+<li><a href="#付記-2-本倫理システムを他者に勧めない理由について" id="toc-付記-2-本倫理システムを他者に勧めない理由について">付記 2 　本倫理システムを他者に勧めない理由について</a></li>
+</ul></li>
+<li><a href="#付録-検証" id="toc-付録-検証">付録　検証</a>
+<ul>
+<li><a href="#第-16-章-想定される破綻ケース" id="toc-第-16-章-想定される破綻ケース">第 16 章　想定される破綻ケース</a></li>
+<li><a href="#第-17-章-誤用誤読の可能性再整形案" id="toc-第-17-章-誤用誤読の可能性再整形案">第 17 章　誤用・誤読の可能性（再整形案）</a></li>
+<li><a href="#第-18-章-他倫理体系との非互換点" id="toc-第-18-章-他倫理体系との非互換点">第 18 章　他倫理体系との非互換点</a></li>
+<li><a href="#第-19-章-本書が引き受けない問い" id="toc-第-19-章-本書が引き受けない問い">第 19 章　本書が引き受けない問い</a></li>
+</ul></li>
+<li><a href="#付録-a-適用事例" id="toc-付録-a-適用事例">付録 A 　適用事例</a>
+<ul>
+<li><a href="#a-1-高所でパニック状態にある人物への介入" id="toc-a-1-高所でパニック状態にある人物への介入">A-1 　高所でパニック状態にある人物への介入</a></li>
+<li><a href="#a-2-情報が不十分な状況における非介入" id="toc-a-2-情報が不十分な状況における非介入">A-2 　情報が不十分な状況における非介入</a></li>
+<li><a href="#a-3-他者の判断環境に配慮した沈黙部分的提示を選んだ事例" id="toc-a-3-他者の判断環境に配慮した沈黙部分的提示を選んだ事例">A-3 　他者の判断環境に配慮した沈黙・部分的提示を選んだ事例</a></li>
+<li><a href="#a-4-関係維持のために行為選択を制限した暫定的管理" id="toc-a-4-関係維持のために行為選択を制限した暫定的管理">A-4 　関係維持のために行為選択を制限した暫定的管理</a></li>
+<li><a href="#a-5-関係性を継続しないという判断隔離切断" id="toc-a-5-関係性を継続しないという判断隔離切断">A-5 　関係性を継続しないという判断（隔離・切断）</a></li>
+</ul></li>
+<li><a href="#付録-b-構造理解補助" id="toc-付録-b-構造理解補助">付録 B 構造理解補助</a>
+<ul>
+<li><a href="#付録-b-1-全体レイヤー構造" id="toc-付録-b-1-全体レイヤー構造">付録 B-1 　全体レイヤー構造</a></li>
+<li><a href="#付録-b-2-判断フロー" id="toc-付録-b-2-判断フロー">付録 B-2 　判断フロー</a></li>
+</ul></li>
+<li><a href="#付録-c-倫理システムに関する問答" id="toc-付録-c-倫理システムに関する問答">付録 C 　倫理システムに関する問答</a>
+<ul>
+<li><a href="#q1.-この倫理システムは生きているだけで不可逆影響を生むという矛盾を抱えていませんか" id="toc-q1.-この倫理システムは生きているだけで不可逆影響を生むという矛盾を抱えていませんか">Q1. この倫理システムは、「生きているだけで不可逆影響を生む」という矛盾を抱えていませんか？</a></li>
+<li><a href="#q2.目的と正当化を分離するとしながら関係の切断第-14-章を行うのは矛盾ではありませんか" id="toc-q2.目的と正当化を分離するとしながら関係の切断第-14-章を行うのは矛盾ではありませんか">Q2.「目的と正当化を分離する」としながら、関係の切断（第 14 章）を行うのは矛盾ではありませんか？</a></li>
+<li><a href="#q3.-非対称リスクを否定しているにもかかわらず実行主体が私一人であること自体が非対称ではありませんか" id="toc-q3.-非対称リスクを否定しているにもかかわらず実行主体が私一人であること自体が非対称ではありませんか">Q3. 非対称リスクを否定しているにもかかわらず、実行主体が「私一人」であること自体が非対称ではありませんか？</a></li>
+<li><a href="#q4.-トロッコ問題のような状況ではこの倫理は何も決定できないのではありませんか" id="toc-q4.-トロッコ問題のような状況ではこの倫理は何も決定できないのではありませんか">Q4. トロッコ問題のような状況では、この倫理は何も決定できないのではありませんか？</a></li>
+<li><a href="#q5.-この倫理システムは結局のところ何のために存在するのですか" id="toc-q5.-この倫理システムは結局のところ何のために存在するのですか">Q5. この倫理システムは、結局のところ何のために存在するのですか？</a></li>
+<li><a href="#q6.-この倫理を動かしているものは何ですか" id="toc-q6.-この倫理を動かしているものは何ですか">Q6. この倫理を動かしているものは何ですか？</a></li>
+</ul></li>
+<li><a href="#奥付" id="toc-奥付">奥付</a></li>
 </ul>
 </nav>
-<h1
-id="ナニカシイラの倫理---markdownテストドキュメント">ナニカシイラの倫理
-- Markdownテストドキュメント</h1>
-<h2 id="はじめに">はじめに</h2>
-<p>これは、Pandocでの目次生成とstyle.cssの挙動を確認するためのテストドキュメントです。Markdownの基本的な構文をすべてテストしています。</p>
-<h2 id="見出しのテスト">見出しのテスト</h2>
-<h3 id="レベル3の見出し">レベル3の見出し</h3>
-<h4 id="レベル4の見出し">レベル4の見出し</h4>
-<h5 id="レベル5の見出し">レベル5の見出し</h5>
-<h6 id="レベル6の見出し">レベル6の見出し</h6>
-<h2 id="テキストフォーマット">テキストフォーマット</h2>
-<p>これは<strong>太字</strong>のテキストです。</p>
-<p>これは<em>斜体</em>のテキストです。</p>
-<p>これは<del>取り消し線</del>のテキストです。</p>
-<p>これは<code>インラインコード</code>です。</p>
-<p>組み合わせ: <strong><em>太字斜体</em></strong> や
-<strong>太字と<code>コード</code></strong>。</p>
-<h2 id="リスト">リスト</h2>
-<h3 id="順序なしリスト">順序なしリスト</h3>
+<h2 id="序論">序論</h2>
+<h3 id="本書の適用範囲と目的">本書の適用範囲と目的</h3>
+<p>本書は、他者を裁くための倫理を提示するものではない。<br />
+また、本書で記述される倫理を、他者に適用することや、流用することを積極的に肯定しない。</p>
+<p>私は、この文書を、他者に正しさを示すためでも、<br />
+自らの立場を擁護するためでもなく、<br />
+私自身が引き受ける倫理を言語化し、<br />
+その前提と限界を確認するために作成する。</p>
+<p>本書で記述される倫理の実行主体は、原則として私一人である。<br />
+他者が本書を参照することを妨げはしないが、<br />
+他者の行為を評価し、拘束し、正当化する根拠として用いることは想定しない。</p>
+<p>本書は、倫理の正しさを証明することを目的としない。<br />
+また、普遍的な行動規範や、従うべき道徳を提示することも目的としない。<br />
+扱うのは、ある倫理を<strong>記述すること自体</strong>である。</p>
+<p>したがって本書は、<br />
+倫理の内容が何であるかに先立って、<br />
+それがどのような前提のもとで語られ、<br />
+どの範囲までを扱い、<br />
+どこから先を扱わないかを明示する。</p>
+<p>本書で記述される倫理は、<br />
+検証・批判・修正・破棄の対象となりうる。<br />
+本書自身も例外ではなく、<br />
+特定の条件のもとでのみ成立する、<br />
+限定された記述として位置づけられる。</p>
+<p>以上の理由から、本書は結論を与えない。<br />
+本書が行うのは、<br />
+一つの倫理を記述し、<br />
+その適用範囲と限界を可視化することに限られる。</p>
+<p>それが、本書の唯一の目的である。</p>
+<h2 id="第-1-部-世界モデル">第 1 部　世界モデル</h2>
+<p>― 倫理が置かれる前提条件 ―</p>
+<h3 id="第-1-章-人間と世界の前提条件">第 1 章　人間と世界の前提条件</h3>
+<p>この章では、倫理的判断が行われる以前に存在する、<br />
+人間の判断と、それが置かれる世界に関する前提条件を記述する。<br />
+ここで扱う内容は、善悪や是非の評価を含まない。</p>
+<h4 id="人間の判断に関する前提条件">1.1 人間の判断に関する前提条件</h4>
+<p>人間は、世界を完全に把握する主体ではない。<br />
+人間の認知と判断には、<br />
+あらかじめ避けられない制約が存在する。</p>
+<p>具体的には、人間の行為と判断は、<br />
+少なくとも次の点で不確定である。</p>
 <ul>
-<li>項目1</li>
-<li>項目2
+<li><p><strong>認知の不完全性</strong><br />
+人間は、状況の全体を同時に把握することができない。<br />
+観測できる情報は、常に限定されている。</p></li>
+<li><p><strong>予測の不確実性</strong><br />
+行為に先立って意図を形成することはできるが、<br />
+その意図がどのような結果をもたらすかを、<br />
+完全に予測することはできない。</p></li>
+<li><p><strong>因果経路の不可視性</strong><br />
+行為の結果が、どのような経路をたどり、<br />
+どこまで影響を及ぼすかは、<br />
+行為後になって初めて明らかになる場合が多い。</p></li>
+<li><p><strong>時間的制約</strong><br />
+判断は、十分な検討時間が確保できない状況でも行われる。</p></li>
+<li><p><strong>情報の欠落と偏り</strong><br />
+利用できる情報は、不足していたり、偏っていたりする。</p></li>
+<li><p><strong>心理的・社会的影響</strong><br />
+感情、立場、周囲の期待や圧力が、<br />
+判断に影響を与えることは避けられない。</p></li>
+</ul>
+<p>このように、人間の行為は、<br />
+不完全な認知と不完全な予測のもとで実行される。<br />
+この事実は、<br />
+特定の倫理を採用するか否かにかかわらず、<br />
+倫理的判断一般に共通する前提条件である。</p>
+<p>本節では、<br />
+これらの制約を事実として確認するにとどめる。</p>
+<h4 id="世界の性質に関する前提条件">1.2 世界の性質に関する前提条件</h4>
+<p>人間の判断が置かれる世界は、<br />
+固定された構造ではない。<br />
+世界における出来事や行為は、<br />
+互いに影響し合いながら連鎖し、変形していく。</p>
+<p>世界における変化は、<br />
+単一の因果関係によって完結するとは限らない。<br />
+行為の影響は、<br />
+他の行為や状況と結びつきながら、<br />
+予期しない形で拡張される場合がある。</p>
+<p>その中には、<br />
+ある変化が、それ以前に成立していた<br />
+多くの可能性や関係性の成立条件そのものを、<br />
+消失させてしまう場合がある。</p>
+<p>こうした変化は、<br />
+後から別の状態を構築することで<br />
+形式的に置き換えられるように見えることがあっても、<br />
+失われた可能性や関係性が、<br />
+同一のかたちで回復されるとは限らない。</p>
+<p>本節では、<br />
+世界がこのような連鎖性と変形性を持つことを、<br />
+前提条件として整理するにとどめる。<br />
+どの変化を重要な影響として扱うか、<br />
+また、それをどのように評価するかは、<br />
+次章以降で扱う。</p>
+<h3 id="第-2-章-不可逆性と非対称性">第 2 章　不可逆性と非対称性</h3>
+<p>前章では、<br />
+倫理的判断が行われる以前の前提として、<br />
+人間の判断が不完全であること、<br />
+そして判断が置かれる世界が、<br />
+連鎖的かつ変形的に変化し続けることを確認した。</p>
+<p>本章では、<br />
+そのような世界において生じる変化の中でも、<br />
+倫理的判断と特に強く関係する性質として、<br />
+<strong>不可逆性</strong>と<strong>非対称性</strong>を記述する。</p>
+<p>ここで扱う内容は、行為の是非や責任の配分を含まない。</p>
+<h4 id="不可逆性">2.1 不可逆性</h4>
+<p>不可逆性とは、<br />
+一度生じた影響が、後から完全には取り消せないという性質を指す。</p>
+<p>人間の行為は、<br />
+行為以前の状態へと世界を正確に戻せない場合がある。<br />
+この性質は、行為の意図や善意の有無とは独立して存在する。</p>
+<p>不可逆性は、次のような形で現れる。</p>
 <ul>
-<li>サブ項目2.1</li>
-<li>サブ項目2.2</li>
+<li><strong>物理的不可逆性</strong><br />
+身体的損傷、資源の消費、環境の変化など、<br />
+元の状態へ回復できない、または回復に本質的な限界がある影響。</li>
+<li><strong>時間的不可逆性</strong><br />
+失われた時間や機会は、後から補填できない。</li>
+<li><strong>情報的不可逆性</strong><br />
+一度公開・伝達された情報は、完全に回収できない。</li>
+<li><strong>関係的不可逆性</strong><br />
+信頼の喪失や関係の破綻は、形式的な修復が可能であっても、<br />
+元の状態に戻るとは限らない。</li>
+</ul>
+<p>これらの不可逆性は、<br />
+人間の判断や努力によって軽減されることはあっても、<br />
+存在そのものが消えることはない。</p>
+<p>なお、本倫理システムにおける不可逆性は、<br />
+形式的な修復可能性の有無のみを基準とするものではない。<br />
+一度の行為や変化を経た結果、<br />
+同一の状態に戻すことが形式的に可能であっても、<br />
+行為の選択肢や関係の構造が失われる場合がある。<br />
+このような履歴依存的な差異が、<br />
+現実世界において避けられないことを、本章では確認するにとどめる。</p>
+<h4 id="非対称性">2.2 非対称性</h4>
+<p>非対称性とは、<br />
+行為によって生じる影響や負担が、<br />
+関係する主体のあいだで等しく分配されないという性質を指す。</p>
+<p>行為を行う主体と、<br />
+その影響を受ける主体は、<br />
+同一であるとは限らない。<br />
+その結果、次のような非対称性が生じる。</p>
+<ul>
+<li><strong>影響の非対称性</strong><br />
+行為の結果として生じる影響の大きさが、<br />
+主体ごとに異なる。</li>
+<li><strong>回復可能性の非対称性</strong><br />
+ある主体にとって回復可能な影響が、<br />
+別の主体にとっては回復不能である場合がある。</li>
+<li><strong>情報の非対称性</strong><br />
+行為時点で把握できる情報量が、<br />
+主体ごとに異なる。</li>
+<li><strong>選択権の非対称性</strong><br />
+行為の可否や内容を決定する権限が、<br />
+一部の主体に集中する場合がある。</li>
+</ul>
+<p>非対称性は、<br />
+人間関係や社会構造が存在する限り、<br />
+完全に消失することはない。</p>
+<h4 id="本章の位置づけ">2.3 本章の位置づけ</h4>
+<p>本章で確認した不可逆性と非対称性は、<br />
+特定の倫理を支持するための主張ではない。<br />
+それらは、倫理的判断が置かれる<strong>前提条件</strong>である。</p>
+<p>これらの性質を前提としたとき、<br />
+どのような評価軸を採用するか、<br />
+どのような判断原理が必要となるかは、<br />
+次章以降で扱う。</p>
+<h2 id="第-2-部-倫理原理">第 2 部　倫理原理</h2>
+<p>― この倫理が越えない境界条件 ―</p>
+<p>ここから先では、本書が記述する倫理において、<br />
+判断の前提として固定される原理を定義する。</p>
+<p>この部で扱うのは、<br />
+行為をどう扱うかではなく、<br />
+<strong>どのような理由であっても越えてはならない境界条件</strong>である。</p>
+<p>本部では、<br />
+行為の可否、処遇、責任の配分は決定しない。<br />
+後続の議論において判断が恣意化しないための、<br />
+原理のみを整理する。</p>
+<h3 id="第-3-章-評価軸としての不可逆影響">第 3 章　評価軸としての不可逆影響</h3>
+<p>この章では、前章までに確認した世界の前提条件を踏まえ、<br />
+本倫理システムが採用する<strong>評価軸</strong>を定義する。<br />
+ここで扱う内容は、行為の是非を決定する手順や、<br />
+具体的な対処方法を含まない。</p>
+<h4 id="評価軸を定める必要性">3.1 評価軸を定める必要性</h4>
+<p>倫理的判断は、<br />
+複数の価値や結果が競合する状況で行われる。<br />
+その際、評価軸が明示されていなければ、<br />
+判断は一貫性を持たない。</p>
+<p>前章までに確認したとおり、<br />
+世界には不可逆性と非対称性が存在する。<br />
+この条件下では、<br />
+すべての影響を等価に扱うことはできない。</p>
+<p>したがって、本倫理システムでは、<br />
+<strong>評価の基準を一つに限定する</strong>。</p>
+<h4 id="不可逆影響という評価軸">3.2 不可逆影響という評価軸</h4>
+<p>本倫理システムが採用する評価軸は、<br />
+<strong>行為によって生じうる不可逆影響の有無と性質</strong>である。</p>
+<p>ここでいう不可逆影響とは、<br />
+行為の結果として生じ、<br />
+後から完全には回収・取消できない影響を指す。<br />
+この定義は、行為の意図や動機とは独立している。</p>
+<p>評価の対象となるのは、<br />
+行為そのものではなく、<br />
+<strong>行為がもたらす不可逆影響</strong>である。</p>
+<h4 id="評価軸の限定">3.3 評価軸の限定</h4>
+<p>本倫理システムでは、<br />
+次の点を評価軸として採用しない。</p>
+<ul>
+<li><strong>動機や意図の善悪</strong><br />
+行為者が何を意図していたかは、<br />
+不可逆影響の発生有無を変えない。</li>
+<li><strong>結果の総量や効用の最大化</strong><br />
+可逆的な利益の総和は、<br />
+不可逆影響と直接比較できない。</li>
+<li><strong>社会的評価や規範</strong><br />
+社会的に是とされているか否かは、<br />
+不可逆影響の性質を規定しない。</li>
+</ul>
+<p>これらを排除することで、<br />
+評価軸を不可逆影響に集中させる。</p>
+<h4 id="評価軸が扱うもの扱わないもの">3.4 評価軸が扱うもの・扱わないもの</h4>
+<p>不可逆影響という評価軸は、<br />
+次の問いにのみ答える。</p>
+<ul>
+<li>行為によって、回復不能な影響が生じるか</li>
+<li>生じる場合、その影響は誰に及ぶか</li>
+<li>その影響は、行為以前の状態と何を失わせるか</li>
+</ul>
+<p>一方で、次の問いには答えない。</p>
+<ul>
+<li>その行為は許されるか</li>
+<li>行為者は責任を負うべきか</li>
+<li>どのような対応が正しいか</li>
+</ul>
+<p>これらは、後続の章で扱う。</p>
+<h4 id="本章の位置づけ-1">3.5 本章の位置づけ</h4>
+<p>本章で定義した評価軸は、<br />
+倫理的判断を自動化するための規則ではない。<br />
+また、結論を導くための計算式でもない。</p>
+<p>本章が行うのは、<br />
+後続の原理や運用を記述するための、<br />
+<strong>共通の観測点</strong>を設定することに限られる。</p>
+<p>この評価軸を前提として、<br />
+次章では、<br />
+目的と正当化の関係が整理される。</p>
+<h3 id="第-4-章-目的と正当化の分離">第 4 章　目的と正当化の分離</h3>
+<p>この章では、前章で定義した評価軸を前提として、<br />
+<strong>目的</strong>と<strong>正当化</strong>を概念的に分離する。<br />
+ここで扱う内容は、行為の許容可否や対応策を決定しない。</p>
+<h4 id="分離が必要となる理由">4.1 分離が必要となる理由</h4>
+<p>行為は、通常、何らかの目的を伴って行われる。<br />
+しかし、目的の存在や価値が、<br />
+行為によって生じる不可逆影響を相殺するとは限らない。</p>
+<p>不可逆影響が存在する状況において、<br />
+目的と正当化が混同されると、<br />
+評価は不安定になりやすい。<br />
+この混同を避けるため、<br />
+両者を明確に分離する必要がある。</p>
+<h4 id="目的の位置づけ">4.2 目的の位置づけ</h4>
+<p>本倫理システムにおける<strong>目的</strong>とは、<br />
+行為者が行為に先立って想定する到達点を指す。<br />
+目的は、行為の動機や意図と結びつくが、<br />
+それ自体が評価軸となるものではない。</p>
+<p>目的は、次の点で不確定である。</p>
+<ul>
+<li><strong>達成不確実性</strong><br />
+目的は、行為によって必ず達成されるとは限らない。</li>
+<li><strong>手段依存性</strong><br />
+同一の目的であっても、<br />
+採用される手段によって影響は大きく異なる。</li>
+<li><strong>副次影響の不可視性</strong><br />
+目的の達成過程で生じる影響が、<br />
+事前に把握できない場合がある。</li>
+</ul>
+<h4 id="正当化の位置づけ">4.3 正当化の位置づけ</h4>
+<p>本倫理システムにおける<strong>正当化</strong>とは、<br />
+行為によって生じる影響を、<br />
+受容可能であると位置づける説明を指す。</p>
+<p>正当化は、<br />
+評価の結果としてのみ行われるべきであり、<br />
+評価に先行してはならない。</p>
+<h4 id="混同が生じる典型">4.4 混同が生じる典型</h4>
+<p>目的と正当化が混同されると、<br />
+次のような論理が生じやすい。</p>
+<ul>
+<li>目的が善である<br />
+→ その目的のための影響は容認される</li>
+<li>目的が重要である<br />
+→ 影響は後から補填できると見なされる</li>
+<li>目的が共有されている<br />
+→ 影響を受ける主体の差異が見えなくなる</li>
+</ul>
+<p>これらはいずれも、<br />
+不可逆影響の評価を目的の価値で置き換えてしまう。</p>
+<h4 id="分離の原則">4.5 分離の原則</h4>
+<p>本倫理システムでは、次の原則を採用する。</p>
+<ul>
+<li>目的は、行為の理由としては扱うが、<br />
+<strong>不可逆影響を正当化する根拠としては扱わない</strong></li>
+<li>不可逆影響の有無と性質は、<br />
+目的とは独立して評価される</li>
+<li>正当化は、<br />
+評価の結果を説明するためにのみ用いられる</li>
+</ul>
+<h4 id="本章の位置づけ-2">4.6 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+行為の価値を否定することではない。<br />
+また、目的の設定を無意味化することでもない。</p>
+<p>本章の役割は、<br />
+評価の順序を固定することにある。<br />
+不可逆影響の評価に、<br />
+目的を先行させない。</p>
+<p>この分離を前提として、<br />
+次章では、<br />
+非対称なリスクの扱いが整理される。</p>
+<h3 id="第-5-章-非対称リスクの否定">第 5 章　非対称リスクの否定</h3>
+<p>この章では、前章までに定義した評価軸と原理を前提として、<br />
+<strong>非対称なリスクをどのように扱うか</strong>を原理として整理する。<br />
+ここで扱う内容は、具体的な行為の可否や対処方法を決定しない。</p>
+<h4 id="非対称リスクとは何か">5.1 非対称リスクとは何か</h4>
+<p>本章でいう<strong>非対称リスク</strong>とは、<br />
+行為によって生じうる不可逆影響のリスクが、<br />
+関係する主体のあいだで等しく分配されない状態を指す。</p>
+<p>特に問題となるのは、<br />
+ある主体が不可逆影響を被る可能性を負う一方で、<br />
+別の主体はその影響をほとんど、あるいは全く負わない場合である。</p>
+<h4 id="非対称リスクが生じる条件">5.2 非対称リスクが生じる条件</h4>
+<p>非対称リスクは、次の条件が重なったときに生じやすい。</p>
+<ul>
+<li><strong>決定と影響の分離</strong><br />
+行為の決定権を持つ主体と、<br />
+影響を受ける主体が一致しない。</li>
+<li><strong>回復可能性の差</strong><br />
+影響を受ける主体間で、<br />
+回復可能性に本質的な差がある。</li>
+<li><strong>情報の偏在</strong><br />
+行為の影響について把握できる情報が、<br />
+主体ごとに大きく異なる。</li>
+<li><strong>選択の非対称</strong><br />
+影響を受ける側に、<br />
+行為を拒否・回避する選択肢が与えられていない。</li>
+</ul>
+<h4 id="非対称リスクの問題点">5.3 非対称リスクの問題点</h4>
+<p>非対称リスクが問題となるのは、<br />
+不可逆影響の評価が、<br />
+影響を負わない主体の判断に委ねられやすいためである。</p>
+<p>この状況では、<br />
+評価は次のように歪みやすい。</p>
+<ul>
+<li>不可逆影響が過小評価される</li>
+<li>目的や利益が優先される</li>
+<li>影響を被る主体の回復不能性が見落とされる</li>
+</ul>
+<p>これらは、<br />
+前章で分離したはずの<br />
+<strong>目的と正当化の混同</strong>を再び引き起こす。</p>
+<h4 id="非対称リスクに関する原理">5.4 非対称リスクに関する原理</h4>
+<p>本書では、次の原理を採用する。</p>
+<ul>
+<li>不可逆影響のリスクが、<br />
+特定の主体に一方的に集中する構造を、<br />
+原理的に採用しない。</li>
+<li>行為の目的や便益が、<br />
+非対称な不可逆影響のリスクを<br />
+正当化する根拠として用いられてはならない。</li>
+<li>非対称リスクの存在は、<br />
+それ自体が評価の対象となる。</li>
+</ul>
+<h4 id="本章の位置づけ-3">5.5 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+特定の行為を否定することではない。<br />
+また、現実世界に存在する<br />
+すべての非対称性を排除することでもない。</p>
+<p>本章の役割は、<br />
+不可逆影響を評価する際に、<br />
+<strong>リスクの分配構造</strong>を見落とさないための<br />
+原理を定めることにある。</p>
+<p>この原理を前提として、<br />
+次章では、<br />
+自由・強制・責任という概念の分離が行われる。</p>
+<h3 id="第-6-章-自由強制責任の分離">第 6 章　自由・強制・責任の分離</h3>
+<p>この章では、前章までに定義した評価軸と原理を前提として、<br />
+<strong>自由</strong>・<strong>強制</strong>・<strong>責任</strong>という三つの概念を分離して定義する。<br />
+ここで扱う内容は、行為の可否や処遇を決定しない。</p>
+<h4 id="分離が必要となる理由-1">6.1 分離が必要となる理由</h4>
+<p>倫理的判断において、<br />
+自由・強制・責任はしばしば同一視される。<br />
+この混同は、評価の順序を不明瞭にし、<br />
+不可逆影響の評価を歪めやすい。</p>
+<p>特に、次のような短絡が生じやすい。</p>
+<ul>
+<li>自由に選んだのだから責任がある</li>
+<li>強制されたのだから責任はない</li>
+<li>責任があるのだから自由だったはずだ</li>
+</ul>
+<p>これらはいずれも、<br />
+異なる概念を相互に代替可能なものとして扱っている。</p>
+<h4 id="自由の位置づけ">6.2 自由の位置づけ</h4>
+<p>本倫理システムにおける<strong>自由</strong>とは、<br />
+行為の選択肢が形式的に存在している状態を指す。</p>
+<p>自由は、次の点で限定される。</p>
+<ul>
+<li><strong>選択肢の存在</strong><br />
+選べる可能性が存在しているか。</li>
+<li><strong>情報へのアクセス</strong><br />
+選択に必要な情報が、<br />
+十分に与えられているか。</li>
+<li><strong>回避可能性</strong><br />
+行為を拒否・回避する余地が残されているか。</li>
+</ul>
+<p>自由の存在は、<br />
+行為の結果や影響を保証しない。</p>
+<h4 id="強制の位置づけ">6.3 強制の位置づけ</h4>
+<p>本倫理システムにおける<strong>強制</strong>とは、<br />
+行為の選択肢が実質的に奪われている状態を指す。</p>
+<p>強制は、次の形で現れる。</p>
+<ul>
+<li><strong>直接的強制</strong><br />
+物理的・制度的な拘束によって、<br />
+行為が事実上限定される。</li>
+<li><strong>間接的強制</strong><br />
+重大な不利益を示すことで、<br />
+選択肢が名目上のみ残される。</li>
+<li><strong>構造的強制</strong><br />
+立場や依存関係により、<br />
+選択が事実上不可能になる。</li>
+</ul>
+<p>強制の有無は、<br />
+行為者の意図や動機とは独立して判断される。</p>
+<h4 id="責任の位置づけ">6.4 責任の位置づけ</h4>
+<p>本倫理システムにおける<strong>責任</strong>とは、<br />
+行為と結果の因果関係を引き受けることを指す。</p>
+<p>責任は、<br />
+行為の自由度や強制の有無と<br />
+直ちに一致するものではない。</p>
+<ul>
+<li>自由があっても、<br />
+責任の範囲は限定されうる。</li>
+<li>強制が存在しても、<br />
+因果関係が完全に消失するとは限らない。</li>
+</ul>
+<p>責任は、<br />
+評価の結果としてのみ整理されるべきであり、<br />
+評価に先行して決められるものではない。</p>
+<h4 id="分離の原則-1">6.5 分離の原則</h4>
+<p>本倫理システムでは、次の原則を採用する。</p>
+<ul>
+<li>自由・強制・責任は、<br />
+それぞれ独立した概念として扱う。</li>
+<li>いずれか一つの概念をもって、<br />
+他を自動的に決定しない。</li>
+<li>不可逆影響の評価は、<br />
+これらの概念に先行して行われる。</li>
+</ul>
+<h4 id="本章の位置づけ-4">6.6 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+行為者を擁護または非難することではない。<br />
+また、処遇の正当性を決めることでもない。</p>
+<p>本章の役割は、<br />
+後続の運用章において、<br />
+自由・強制・責任が<br />
+恣意的に接続されることを防ぐことにある。</p>
+<p>この分離を前提として、<br />
+次章では、<br />
+判断と行為がどのように生成されるかが扱われる。</p>
+<h2 id="第-3-部-行為の生成と回収">第 3 部　行為の生成と回収</h2>
+<p>― 判断がどのように行われ、どこで回収されるか ―</p>
+<p>本部では、<br />
+<strong>判断がどのような手順によって行われるべきかを示さない。</strong><br />
+本書が判断の正解や最適解を与えることを目的としていないためである。</p>
+<p>判断は状況ごとに異なり、不確実性を含み、ときに成立せず、<br />
+停止や沈黙という形を取ることがある。<br />
+そのため、判断を一律の手順として定式化することは行わない。</p>
+<p>本部で記述するのは、<br />
+判断が生成される条件、想定が限界に達する地点、<br />
+結果がどのように引き受けられ、回収されるかという構造である。</p>
+<p>ここで扱うのは、<br />
+判断を成功させる方法ではなく、<br />
+<strong>判断が破綻しうる地点と、その破綻を引き受けるための整理である。</strong></p>
+<p>この前提のもとで、<br />
+次章以降では、<br />
+行為と不作為、誠実、責任、沈黙といった要素を扱う。</p>
+<h3 id="第-7-章-判断と行為の生成">第 7 章　判断と行為の生成</h3>
+<p>この章では、倫理的判断が、<br />
+どのような過程を経て行為として実行されるかを記述する。<br />
+ここで扱うのは、行為の是非ではなく、<br />
+<strong>判断から行為が生まれる構造</strong>である。</p>
+<h4 id="判断と行為の非同一性">7.1 判断と行為の非同一性</h4>
+<p>判断と行為は、同一ではない。<br />
+人は判断を行っても、<br />
+必ずしもその判断どおりに行為するとは限らない。<br />
+また、行為は、<br />
+明示的な判断を経ずに行われる場合もある。</p>
+<p>この非同一性は、<br />
+倫理的判断を行為に還元することを困難にする。</p>
+<h4 id="行為が生成される基本要素">7.2 行為が生成される基本要素</h4>
+<p>行為は、単一の要因から直接生じるものではない。<br />
+少なくとも、次の要素が関与する。</p>
+<ul>
+<li><strong>状況認識</strong><br />
+行為が行われる場面について、<br />
+行為者が把握している情報。</li>
+<li><strong>判断</strong><br />
+与えられた情報のもとで、<br />
+何を選ぶかについての内部的決定。</li>
+<li><strong>制約条件</strong><br />
+時間、資源、立場、制度など、<br />
+行為の選択肢を制限する要因。</li>
+<li><strong>実行可能性</strong><br />
+判断した内容が、<br />
+実際に行為として実行できるかどうか。</li>
+</ul>
+<p>これらは常に同時に揃うわけではなく、<br />
+いずれかが欠けた状態でも行為は生じうる。</p>
+<h4 id="判断の不完全性">7.3 判断の不完全性</h4>
+<p>判断は、常に限定された条件のもとで行われる。<br />
+第 1 部で確認したとおり、<br />
+判断は不完全な情報と不確実な予測に依存する。</p>
+<p>そのため、<br />
+判断は次のような性質を持つ。</p>
+<ul>
+<li><strong>暫定性</strong><br />
+後から修正されうる。</li>
+<li><strong>局所性</strong><br />
+全体ではなく、<br />
+観測可能な範囲に基づく。</li>
+<li><strong>非一貫性</strong><br />
+時間や状況の変化によって、<br />
+同一主体でも異なる判断がなされる。</li>
+</ul>
+<h4 id="判断から行為への遷移">7.4 判断から行為への遷移</h4>
+<p>判断が行為へと接続される過程では、<br />
+次のような断絶が生じうる。</p>
+<ul>
+<li>判断は形成されたが、<br />
+行為に移されない。</li>
+<li>行為は行われたが、<br />
+事前の判断が明確でない。</li>
+<li>判断と行為のあいだに、<br />
+第三の要因（圧力・偶発性など）が介在する。</li>
+</ul>
+<p>これらは例外ではなく、<br />
+行為生成に内在する通常の状態である。</p>
+<h4 id="本章の位置づけ-5">7.5 本章の位置づけ</h4>
+<p>本章で行ったのは、<br />
+行為を評価するための基準を示すことではない。<br />
+また、判断の正しさを測定することでもない。</p>
+<p>本章の役割は、<br />
+後続章において、<br />
+行為の結果を扱う際に、<br />
+「判断があったか否か」や<br />
+「意図があったか否か」だけで<br />
+評価を単純化しないための前提を置くことにある。</p>
+<p>この前提を踏まえ、<br />
+次章では、<br />
+行為前に想定できる範囲と、その限界が整理される。</p>
+<h3 id="第-8-章-想定と限界">第 8 章　想定と限界</h3>
+<p>この章では、行為が実行される以前に、<br />
+行為者が<strong>どこまでを想定できるか</strong>、<br />
+また、<strong>どこから先は想定できないか</strong>を記述する。<br />
+ここで扱う内容は、行為の是非を決定しない。</p>
+<h4 id="想定という行為の性質">8.1 想定という行為の性質</h4>
+<p>想定とは、<br />
+行為に先立って、結果や影響を見積もる試みである。<br />
+想定は、判断を支える重要な要素であるが、<br />
+それ自体が結果を保証するものではない。</p>
+<p>想定は、次の条件に依存する。</p>
+<ul>
+<li>利用可能な情報</li>
+<li>行為時点での理解</li>
+<li>想定に割ける時間と資源</li>
+</ul>
+<p>これらが十分であっても、<br />
+想定には必ず限界が存在する。</p>
+<h4 id="想定可能な範囲">8.2 想定可能な範囲</h4>
+<p>行為前に想定可能なのは、<br />
+主として次の範囲に限られる。</p>
+<ul>
+<li><strong>直接的な結果</strong><br />
+行為と比較的短い因果距離で結びつく影響。</li>
+<li><strong>既知の反復事例</strong><br />
+過去に同様の行為が行われ、<br />
+その結果が共有されている場合。</li>
+<li><strong>制度化された影響</strong><br />
+法制度や手続きとして、<br />
+影響が明示されているもの。</li>
+</ul>
+<p>これらは、<br />
+行為前に一定程度の予測が可能である。</p>
+<h4 id="想定の限界">8.3 想定の限界</h4>
+<p>一方で、次のような影響は、<br />
+行為前に十分に想定することが難しい。</p>
+<ul>
+<li><strong>間接的・連鎖的影響</strong><br />
+複数の主体や状況を経由して生じる影響。</li>
+<li><strong>累積的影響</strong><br />
+単独では小さいが、<br />
+反復によって性質が変化する影響。</li>
+<li><strong>文脈依存的影響</strong><br />
+社会的・関係的文脈の変化によって、<br />
+意味や重みが変わる影響。</li>
+<li><strong>新規的影響</strong><br />
+先例がなく、<br />
+想定のための参照点が存在しない影響。</li>
+</ul>
+<p>これらは、<br />
+想定の努力によって完全に解消することはできない。</p>
+<h4 id="想定と過失の非同一性">8.4 想定と過失の非同一性</h4>
+<p>想定の限界は、<br />
+直ちに過失や怠慢を意味しない。<br />
+十分な想定を行っても、<br />
+予測不能な影響は生じうる。</p>
+<p>したがって、<br />
+結果の予見可能性と、<br />
+行為者の態度や誠実さは、<br />
+区別して扱われる必要がある。</p>
+<h4 id="本章の位置づけ-6">8.5 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+想定の不足を非難することではない。<br />
+また、想定を無限に要求することでもない。</p>
+<p>本章の役割は、<br />
+行為前に引き受けうる想定の範囲と、<br />
+引き受けられない限界を明示することにある。</p>
+<p>この整理を前提として、<br />
+次章では、<br />
+行為前の態度としての誠実が扱われる。</p>
+<h3 id="第-9-章-行為生成としての誠実">第 9 章　行為生成としての誠実</h3>
+<p>この章では、行為が実行される以前の段階において、<br />
+行為者がどのような態度で判断と想定に向き合うかを記述する。<br />
+ここで扱う<strong>誠実</strong>とは、人格的徳目ではなく、<br />
+<strong>行為生成過程における振る舞いの性質</strong>を指す。</p>
+<h4 id="誠実を定義する必要性">9.1 誠実を定義する必要性</h4>
+<p>前章で確認したとおり、<br />
+行為前の想定には必ず限界がある。<br />
+この限界が存在する以上、<br />
+結果のみをもって行為を評価することはできない。</p>
+<p>そのため、<br />
+行為が生成される過程そのものに、<br />
+一定の基準を設ける必要がある。<br />
+本章では、その基準を<strong>誠実</strong>と呼ぶ。</p>
+<h4 id="誠実の定義">9.2 誠実の定義</h4>
+<p>本倫理システムにおける誠実とは、<br />
+行為に先立って、<br />
+<strong>想定可能な範囲を検討し、<br />
+その結果を引き受ける姿勢</strong>を指す。</p>
+<p>誠実は、<br />
+結果の良し悪しや、<br />
+想定の完全性によって決まるものではない。</p>
+<h4 id="誠実が成立する条件">9.3 誠実が成立する条件</h4>
+<p>誠実は、少なくとも次の条件を満たすときに成立する。</p>
+<ul>
+<li><strong>想定可能性の検討</strong><br />
+行為前に、<br />
+直接的・既知の影響について検討している。</li>
+<li><strong>限界の認識</strong><br />
+想定できない影響が存在することを、<br />
+自覚している。</li>
+<li><strong>影響の不可視化を避ける態度</strong><br />
+不都合な影響を、<br />
+意図的に想定から排除しない。</li>
+<li><strong>結果引受の準備</strong><br />
+行為後に生じる結果を、<br />
+後から否認しない姿勢を持つ。</li>
+</ul>
+<h4 id="誠実と過失善意の区別">9.4 誠実と過失・善意の区別</h4>
+<p>誠実は、<br />
+過失や善意と同一ではない。</p>
+<ul>
+<li>善意があっても、<br />
+誠実であるとは限らない。</li>
+<li>想定が不十分であっても、<br />
+直ちに不誠実とは限らない。</li>
+<li>誠実であっても、<br />
+望ましくない結果は生じうる。</li>
+</ul>
+<p>誠実は、<br />
+行為生成の<strong>過程</strong>にのみ関わる。</p>
+<h4 id="本章の位置づけ-7">9.5 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+行為者を評価することではない。<br />
+また、誠実であることを要求することでもない。</p>
+<p>本章の役割は、<br />
+後続章において、<br />
+行為後の結果を扱う際に、<br />
+「誠実であったか否か」を<br />
+人格評価へ短絡させないための前提を置くことにある。</p>
+<p>この前提を踏まえ、<br />
+次章では、<br />
+行為後に結果がどのように引き受けられるかが扱われる。</p>
+<h3 id="第-10-章-因果帰属としての責任">第 10 章　因果帰属としての責任</h3>
+<p>この章では、行為が実行された後に、<br />
+生じた結果がどのように行為へ結び付けられるかを記述する。<br />
+ここで扱う<strong>責任</strong>とは、<br />
+非難や処罰の根拠ではなく、<br />
+<strong>結果を処理するための因果の整理</strong>を指す。</p>
+<h4 id="責任を定義する必要性">10.1 責任を定義する必要性</h4>
+<p>行為の結果は、<br />
+しばしば複数の要因が重なって生じる。<br />
+そのため、結果をそのまま行為者の評価へ直結させると、<br />
+判断は不安定になりやすい。</p>
+<p>前章までに整理したとおり、<br />
+行為は不完全な判断と想定のもとで生成され、<br />
+結果は想定を超えて現れることがある。<br />
+この条件下では、<br />
+責任を<strong>道徳的評価</strong>として扱うことは適切でない。</p>
+<h4 id="因果帰属としての責任">10.2 因果帰属としての責任</h4>
+<p>本倫理システムにおける責任とは、<br />
+生じた結果について、<br />
+どの行為がどの部分に関与したかを整理することを指す。</p>
+<p>責任は、<br />
+結果を誰かに押し付けるためではなく、<br />
+<strong>結果を理解し、対応を可能にするため</strong>に設定される。</p>
+<h4 id="因果帰属の基本原則">10.3 因果帰属の基本原則</h4>
+<p>因果帰属は、次の原則に基づいて行われる。</p>
+<ul>
+<li><strong>因果関係の限定</strong><br />
+行為と結果のあいだに、<br />
+現実的な因果連鎖が存在するかを確認する。</li>
+<li><strong>寄与の分解</strong><br />
+結果が複数の要因から生じている場合、<br />
+単一の行為に全責任を集中させない。</li>
+<li><strong>結果基準</strong><br />
+意図や善意ではなく、<br />
+実際に生じた影響を基準とする。</li>
+<li><strong>時間的整合性</strong><br />
+行為後にのみ判明した情報を、<br />
+行為前の判断へ遡及適用しない。</li>
+</ul>
+<h4 id="責任と誠実の関係">10.4 責任と誠実の関係</h4>
+<p>前章で定義した誠実は、<br />
+行為生成過程の性質である。<br />
+一方、責任は、<br />
+行為後に結果を整理するための枠組みである。</p>
+<p>したがって、</p>
+<ul>
+<li>誠実であっても、<br />
+因果帰属としての責任が生じることはある。</li>
+<li>不誠実でなくとも、<br />
+結果に対する対応が必要となることはある。</li>
+</ul>
+<p>両者は、<br />
+役割と位置づけが異なる。</p>
+<h4 id="本章の位置づけ-8">10.5 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+行為者を非難することではない。<br />
+また、処罰や補償を決定することでもない。</p>
+<p>本章の役割は、<br />
+行為後に生じた結果を、<br />
+恣意的な評価や感情から切り離し、<br />
+<strong>処理可能な形に整理すること</strong>にある。</p>
+<p>この整理を前提として、<br />
+次章では、<br />
+行為しなかったことが持つ意味が扱われる。</p>
+<h3 id="第-11-章-沈黙介入当事者性">第 11 章　沈黙・介入・当事者性</h3>
+<p>この章では、行為が実行されなかった場合、<br />
+すなわち<strong>沈黙</strong>や<strong>不介入</strong>が選択された場合に、<br />
+それがどのような意味を持つかを記述する。<br />
+ここで扱う内容は、行為の正当性や義務を決定しない。</p>
+<h4 id="行為しないことの位置づけ">11.1 行為しないことの位置づけ</h4>
+<p>行為が行われなかったからといって、<br />
+判断が存在しなかったとは限らない。<br />
+沈黙や不介入も、<br />
+状況に対する一つの応答である。</p>
+<p>行為と不作為は、<br />
+倫理的判断において対立概念ではなく、<br />
+<strong>いずれも結果に接続されうる選択</strong>である。</p>
+<h4 id="沈黙という選択">11.2 沈黙という選択</h4>
+<p>本倫理システムにおける<strong>沈黙</strong>とは、<br />
+状況に対して、<br />
+意図的に発言や行為を行わない選択を指す。</p>
+<p>沈黙は、次のような理由で選択されうる。</p>
+<ul>
+<li>情報が不十分である</li>
+<li>介入による影響が大きすぎる</li>
+<li>発言や行為が、<br />
+状況を悪化させる可能性がある</li>
+</ul>
+<p>沈黙は、<br />
+常に消極的な態度を意味するわけではない。</p>
+<h4 id="介入という選択">11.3 介入という選択</h4>
+<p><strong>介入</strong>とは、<br />
+状況に対して、<br />
+何らかの行為を通じて影響を与える選択を指す。</p>
+<p>介入は、<br />
+行為である以上、<br />
+不可逆影響や非対称リスクを伴いうる。</p>
+<p>そのため、<br />
+介入は常に慎重さを要する。</p>
+<h4 id="当事者性の形成">11.4 当事者性の形成</h4>
+<p>沈黙と介入は、<br />
+行為の有無にかかわらず、<br />
+<strong>当事者性</strong>を形成する。</p>
+<p>当事者性とは、<br />
+状況や結果との関係性を指す。<br />
+それは、<br />
+直接行為を行ったか否かだけで決まらない。</p>
+<p>当事者性は、次の要素から構成される。</p>
+<ul>
+<li>状況への関与度</li>
+<li>結果への影響可能性</li>
+<li>選択可能性の有無</li>
+</ul>
+<p>これらの要素は、<br />
+行為・不作為のいずれにも存在しうる。</p>
+<h4 id="沈黙と責任の関係">11.5 沈黙と責任の関係</h4>
+<p>沈黙や不介入は、<br />
+自動的に責任を免除するものではない。<br />
+また、直ちに責任を発生させるものでもない。</p>
+<p>重要なのは、<br />
+沈黙や不介入が、<br />
+どのような結果に接続されたかである。</p>
+<p>責任の有無や範囲は、<br />
+前章で整理した因果帰属の枠組みによって、<br />
+結果を踏まえて整理される。</p>
+<h4 id="判断が生成されない状態について">11.6 判断が生成されない状態について</h4>
+<p>本章で扱ってきた沈黙や不介入は、<br />
+常に判断が生成された結果として選択されるとは限らない。</p>
+<p>状況によっては、<br />
+不可逆影響や非対称リスクの評価が成立せず、<br />
+介入・不介入のいずれについても、<br />
+倫理原理から判断を導けない場合がある。</p>
+<p>本倫理システムでは、このように<br />
+<strong>行為を選択する判断そのものが生成されない状態</strong>を、<br />
+判断不能と呼ぶ。</p>
+<p>判断不能とは、<br />
+思考や検討を放棄することではない。<br />
+また、沈黙や不介入を正当化するための概念でもない。</p>
+<p>それは、<br />
+行為や不作為を倫理的に意味づける判断を生成できないことが、<br />
+明示的に確定した状態を指す。</p>
+<p>判断不能の状態においても、<br />
+行為や不作為が結果に接続される可能性は否定されない。<br />
+その結果は、<br />
+後続する因果帰属の枠組みによって引き受けられる。</p>
+<h4 id="本章の位置づけ-9">11.7 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+介入を義務化することではない。<br />
+また、沈黙を非難することでもない。</p>
+<p>本章の役割は、<br />
+行為と不作為を同一の判断構造の中に置き、<br />
+「何もしなかったから無関係」という短絡を防ぐことにある。</p>
+<p>この整理を前提として、<br />
+次章では、<br />
+原理が摩耗する場面としての<strong>例外</strong>が扱われる。</p>
+<h2 id="第-4-部-運用の限界と勾配">第 4 部　運用の限界と勾配</h2>
+<p>― 原理が摩耗したときに現れる段階 ―</p>
+<p>本部では、これまでに定義した倫理原理が、<br />
+現実の運用を通じて摩耗し、<br />
+その適用が困難になりつつある段階を扱う。</p>
+<p>ここで記述するのは、<br />
+原理が否定された状態でも、<br />
+更新や破棄が決定された状態でもない。</p>
+<p>原理を維持しようとした結果として生じる、<br />
+限定的・暫定的な運用の段階を整理する。</p>
+<h3 id="第-12-章-例外という歪み">第 12 章　例外という歪み</h3>
+<p>この章では、<br />
+倫理原理をそのまま適用することで、<br />
+かえってより大きな不可逆影響が生じる状況を扱う。<br />
+ここで扱う<strong>例外</strong>とは、<br />
+原理の否定ではなく、<br />
+原理が摩耗した結果として生じる歪みである。</p>
+<h4 id="例外が生じる条件">12.1 例外が生じる条件</h4>
+<p>例外は、<br />
+原理の理解不足や運用の失敗によって生じるものではない。<br />
+次の条件が重なったときに現れる。</p>
+<ul>
+<li>原理を厳密に適用すると、<br />
+より大きな不可逆影響が予見される場合</li>
+<li>非対称リスクを回避しようとすると、<br />
+別の不可逆影響が発生する場合</li>
+<li>介入と沈黙のいずれもが、<br />
+不可逆影響を伴う場合</li>
+</ul>
+<p>これらの状況では、<br />
+原理同士が同時に満たされなくなる。</p>
+<h4 id="例外の位置づけ">12.2 例外の位置づけ</h4>
+<p>本章における例外は、<br />
+原理を緩和する一般規則ではない。<br />
+また、後続の判断を正当化するための<br />
+前例として扱われるものでもない。</p>
+<p>例外とは、<br />
+<strong>特定の状況に一度だけ現れる歪み</strong>であり、<br />
+その都度、個別に引き受けられる。</p>
+<h4 id="例外と正当化の分離">12.3 例外と正当化の分離</h4>
+<p>例外の存在は、<br />
+行為を正当化する理由にはならない。<br />
+例外は、<br />
+「正しい判断が存在しない」ことを示すにとどまる。</p>
+<p>したがって、<br />
+例外が生じた状況においても、<br />
+不可逆影響の評価や因果帰属は維持される。<br />
+例外は、<br />
+原理の停止ではなく、<br />
+原理の限界を示す信号である。</p>
+<h4 id="本章の位置づけ-10">12.4 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+例外を肯定することではない。<br />
+また、例外を避ける方法を示すことでもない。</p>
+<p>本章の役割は、<br />
+倫理原理を維持しようとした結果として、<br />
+避けがたく現れる歪みを<br />
+<strong>段階として可視化すること</strong>にある。</p>
+<p>この整理を前提として、<br />
+次章では、<br />
+例外が反復される状況としての<br />
+<strong>管理と自由制限</strong>が扱われる。</p>
+<h3 id="第-13-章-管理と自由制限">第 13 章　管理と自由制限</h3>
+<p>この章では、<br />
+例外が一度きりでは回収できず、<br />
+関与を継続するために<strong>行為選択の自由を限定的に制限せざるを得ない状況</strong>を扱う。<br />
+ここで扱う内容は、原理の否定や更新ではない。</p>
+<p>（ここでいう管理は、一般的な統治・統制を指す語ではなく、<br />
+不可逆影響を抑制するための限定的な運用を意味する。）</p>
+<h4 id="管理が必要となる条件">13.1 管理が必要となる条件</h4>
+<p>管理は、<br />
+通常運用の延長として選択されるものではない。<br />
+次の条件が重なったときに現れる。</p>
+<ul>
+<li>例外的判断が反復され、<br />
+個別対応では回収できなくなった場合</li>
+<li>非対称リスクが恒常化し、<br />
+自由な選択の継続が、<br />
+不可逆影響を増幅させる場合</li>
+<li>当事者性が拡散し、<br />
+判断主体の境界が不明瞭になった場合</li>
+</ul>
+<p>これらは、<br />
+原理を維持しようとした結果として生じる。</p>
+<h4 id="管理の定義">13.2 管理の定義</h4>
+<p>本章における<strong>管理</strong>とは、<br />
+関与を継続するために、<br />
+行為の選択肢を<strong>一時的・限定的に制限する運用</strong>を指す。</p>
+<p>管理は、<br />
+目的達成の効率化や秩序維持を理由として<br />
+一般化されるものではない。<br />
+不可逆影響の抑制にのみ結びつく。</p>
+<h4 id="自由制限の範囲">13.3 自由制限の範囲</h4>
+<p>自由制限は、<br />
+無差別に拡張されてはならない。<br />
+次の点が維持される必要がある。</p>
+<ul>
+<li><strong>限定性</strong><br />
+制限は、特定の行為や状況に限定される。</li>
+<li><strong>暫定性</strong><br />
+制限は、恒常的な状態として固定されない。</li>
+<li><strong>可視性</strong><br />
+制限の存在と理由が、隠蔽されない。</li>
+</ul>
+<p>これらが失われた場合、<br />
+管理は原理の摩耗ではなく、<br />
+別の運用段階へ移行する。</p>
+<h4 id="管理と正当化の分離">13.4 管理と正当化の分離</h4>
+<p>管理の導入は、<br />
+行為の正当性を保証しない。<br />
+自由を制限したという事実は、<br />
+不可逆影響の評価を免除しない。</p>
+<p>管理は、<br />
+「選択肢を減らすこと」によって<br />
+被害を最小化しようとする運用であり、<br />
+正しさを証明する装置ではない。</p>
+<h4 id="本章の位置づけ-11">13.5 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+管理を推奨することではない。<br />
+また、自由制限を不可避の帰結として<br />
+正当化することでもない。</p>
+<p>本章の役割は、<br />
+原理が摩耗した結果として現れる<br />
+<strong>限定的な自由制限という段階</strong>を整理することにある。</p>
+<p>この整理を前提として、<br />
+次章では、<br />
+関与を続けること自体が破壊的となる場合の<br />
+<strong>隔離・切断・排除</strong>が扱われる。</p>
+<h3 id="第-14-章-隔離切断排除">第 14 章　隔離・切断・排除</h3>
+<p>この章では、<br />
+管理と自由制限によっても回収できず、<br />
+<strong>関与を継続すること自体が不可逆影響を拡大させる状況</strong>を扱う。<br />
+ここで扱う内容は、原理の否定や更新ではない。</p>
+<h4 id="この段階が現れる条件">14.1 この段階が現れる条件</h4>
+<p>隔離・切断・排除は、<br />
+例外や管理の延長として自動的に選ばれるものではない。<br />
+次の条件が重なったときに現れる。</p>
+<ul>
+<li>管理が恒常化し、<br />
+暫定性・限定性を維持できなくなった場合</li>
+<li>関与を続けることで、<br />
+不可逆影響が反復・増幅される場合</li>
+<li>当事者性の整理や因果帰属が、<br />
+運用上成立しなくなった場合</li>
+</ul>
+<p>これらは、<br />
+原理を維持しようとする運用が限界に達した兆候である。</p>
+<h4 id="隔離切断排除の定義">14.2 隔離・切断・排除の定義</h4>
+<p>本章における用語は、次の意味で用いる。<br />
+以下の用語は、評価や制裁を意味しない運用上の区分として定義される。</p>
+<ul>
+<li><strong>隔離</strong><br />
+特定の関係や行為を、<br />
+他の領域から一時的に分離すること。</li>
+<li><strong>切断</strong><br />
+継続的な関与や相互作用を、<br />
+明示的に終了させること。</li>
+<li><strong>排除</strong><br />
+関係性や枠組みから、<br />
+主体または行為を恒久的に外すこと。</li>
+</ul>
+<p>いずれも、<br />
+行為の評価や人格の判断を含まない。</p>
+<h4 id="目的の限定">14.3 目的の限定</h4>
+<p>隔離・切断・排除は、<br />
+秩序の回復や制裁を目的としない。<br />
+目的は一つに限定される。</p>
+<ul>
+<li><strong>不可逆影響の拡大を止めること</strong></li>
+</ul>
+<p>これらは、<br />
+問題を解決する手段ではなく、<br />
+<strong>被害の連鎖を断つための最終的な運用</strong>である。</p>
+<h4 id="正当化との分離">14.4 正当化との分離</h4>
+<p>隔離・切断・排除が選択されたとしても、<br />
+それ自体が判断の正当性を示すことはない。<br />
+これらの運用は、<br />
+不可逆影響の評価や因果帰属を免除しない。</p>
+<p>また、<br />
+排除が行われたことを理由に、<br />
+過去の判断が正当化されることもない。</p>
+<h4 id="本章の位置づけ-12">14.5 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+隔離・切断・排除を推奨することではない。<br />
+また、これらを倫理的に優位な選択として<br />
+位置づけることでもない。</p>
+<p>本章の役割は、<br />
+原理が摩耗した運用の終端として、<br />
+<strong>関与を終えるという段階</strong>を整理することにある。</p>
+<p>この段階を超えると、<br />
+もはや運用による回収は成立しない。<br />
+次章では、<br />
+この状態を前提として、<br />
+<strong>倫理システムそのものの存続判断</strong>が扱われる。</p>
+<h2 id="第-5-部-倫理システムの存続判断">第 5 部　倫理システムの存続判断</h2>
+<p>― 倫理そのものをどう扱うか ―</p>
+<h3 id="第-15-章-倫理システムの更新破棄再設計">第 15 章　倫理システムの更新・破棄・再設計</h3>
+<p>この章では、<br />
+運用による回収が成立しなくなった後に、<br />
+<strong>倫理システム自体をどう扱うか</strong>を扱う。<br />
+ここでの判断は、行為の是非ではない。</p>
+<h4 id="存続判断が必要となる条件">15.1 存続判断が必要となる条件</h4>
+<p>倫理システムの存続判断は、<br />
+単発の失敗によって行われるものではない。<br />
+次の状況が反復された場合に検討される。</p>
+<ul>
+<li>例外・管理・隔離が常態化した場合</li>
+<li>原理の摩耗が累積し、<br />
+運用による回収が成立しなくなった場合</li>
+<li>不可逆影響の評価が、<br />
+倫理内部で整合しなくなった場合</li>
+</ul>
+<p>これらは、<br />
+倫理が使われ続けた結果として現れる。</p>
+<h4 id="更新の位置づけ">15.2 更新の位置づけ</h4>
+<p>本章における<strong>更新</strong>とは、<br />
+倫理原理や構造を修正し、<br />
+同一の倫理として使い続ける判断を指す。</p>
+<p>更新は、<br />
+より正しくなることを保証しない。<br />
+また、過去の判断を正当化するものでもない。</p>
+<p>更新は、<br />
+<strong>現行の倫理が前提とする世界像やリスク配分が、<br />
+現実と乖離した場合の選択肢</strong>である。</p>
+<h4 id="破棄の位置づけ">15.3 破棄の位置づけ</h4>
+<p><strong>破棄</strong>とは、<br />
+当該倫理システムを、<br />
+今後の判断に用いないと決定することである。</p>
+<p>破棄は、<br />
+倫理の失敗や敗北を意味しない。<br />
+また、責任の放棄でもない。</p>
+<p>破棄は、<br />
+<strong>この倫理では引き受けられない影響がある</strong><br />
+と認識する判断である。</p>
+<h4 id="再設計との区別">15.4 再設計との区別</h4>
+<p>再設計は、<br />
+更新とも破棄とも異なる。<br />
+それは、<br />
+同一性を維持することを前提としない。</p>
+<p>再設計では、<br />
+原理・構造・評価軸が再定義される。<br />
+その結果として生まれるものは、<br />
+本書で定義してきた倫理システムとは別の倫理である。</p>
+<h4 id="本章の位置づけ-13">15.5 本章の位置づけ</h4>
+<p>本章が行うのは、<br />
+いずれかの選択を推奨することではない。<br />
+また、倫理を保存すべきだと主張することでもない。</p>
+<p>本章の役割は、<br />
+倫理システムを<strong>判断の対象として明示的に扱う地点</strong>を<br />
+示すことにある。</p>
+<p>この地点を越えると、<br />
+本書が扱ってきた倫理システムは、<br />
+もはや運用対象ではなく、参照対象としてのみ残る。</p>
+<h2 id="終章-結論を与えないという結論">終章　結論を与えないという結論</h2>
+<p>本書は、<br />
+正しい行為や最適な判断を与えることを目的としていない。<br />
+また、特定の倫理観を他者に採用させることも目的としていない。</p>
+<p>本書が記述してきた倫理および倫理システムは、<br />
+<strong>私自身が実行主体として引き受けることを前提に構成されたものである</strong>。<br />
+それは、他者の行為を評価したり、<br />
+他者を拘束するための一般理論ではない。</p>
+<p>本書が行ってきたのは、<br />
+私が用いる倫理システムが、<br />
+どのような前提のもとで成立し、<br />
+どのように運用され、<br />
+どの地点で摩耗し、<br />
+どこで限界に達するかを記述することである。</p>
+<p>ここで示された倫理は、<br />
+完成された規範ではない。<br />
+誤りや失敗、判断不能を含んだまま、<br />
+私自身の判断と行為に適用され続ける枠組みとして位置づけられる。<br />
+したがって、この倫理システムは常に、<br />
+更新・破棄・再設計の対象であり続ける。</p>
+<p>本書は、<br />
+倫理が機能しなくなったときに<br />
+何が起きているのかを見失わないための<br />
+参照点を与えるにとどまる。<br />
+そこから先の判断は、<br />
+この倫理を実行主体として引き受ける私自身に委ねられる。</p>
+<p>以上の理由から、<br />
+本書は結論を与えない。<br />
+代わりに、本書は、<br />
+私の倫理が成立する範囲と、<br />
+成立しなくなる境界を明示した。</p>
+<p>それ以上のことは、<br />
+本書の適用範囲外に置かれる。</p>
+<h2 id="付記">付記</h2>
+<h3 id="付記-1-信念の暫定性と倫理の距離">付記 1 　信念の暫定性と倫理の距離</h3>
+<p>私は、平和・平等・自由がある世界を望んでいる。<br />
+この志向は、論証によって導かれた結論ではなく、<br />
+現時点において私の行為を駆動している前提にすぎない。</p>
+<p>私は判断し、行為を選択しながら生きている。<br />
+そのためには、何らかの前提を仮に信じることが不可避である。<br />
+すべてを検証し尽くしてから判断しようとすれば、<br />
+計算量は発散し、判断そのものが不可能になる。</p>
+<p>この意味で、倫理システムの運用は、<br />
+常に不完全で暫定的な信念を土台として開始される。<br />
+しかし、その信念は、<br />
+倫理システムの正当性や目的を保証するものではない。</p>
+<p>私は、この信念が将来にわたって保持されるとは考えていない。<br />
+世界の状況や私自身の理解の更新に応じて、<br />
+別の前提に置き換えられる可能性を常に含んでいる。</p>
+<p>それでもなお、私は世界と関わり続けることを選ぶ。<br />
+判断可能性を維持し、自らの理解を更新し続けるためには、<br />
+一定のコストを支払って倫理システムを駆動させる必要がある。<br />
+この駆動は、特定の信念を実現するためではなく、<br />
+信念を理由とした自己正当化が<br />
+判断を閉じてしまうことを防ぐために行われる。</p>
+<p>したがって、この倫理システムは、<br />
+私の信念を実装する装置ではなく、<br />
+信念が行為の免罪符へと転化することを抑制する<br />
+制限として設計されている。</p>
+<p>もし信念の更新可能性を閉じてしまえば、<br />
+倫理システム自体もまた、<br />
+固定された目的に奉仕する道具へと矮小化される。<br />
+それは、私が世界と関わり続けるための<br />
+判断可能性を自ら放棄することに等しい。</p>
+<p>このため私は、<br />
+信念と倫理を常に切り離して扱い、<br />
+倫理を、信念の代理ではなく、<br />
+自己の判断を存続させるための枠組みとして運用する。</p>
+<h3 id="付記-2-本倫理システムを他者に勧めない理由について">付記 2 　本倫理システムを他者に勧めない理由について</h3>
+<p>本書で記述した倫理システムは、<br />
+他者に提示されることを想定して書かれているが、<br />
+他者に採用や実践を勧めることを目的としていない。</p>
+<p>その理由の一つは、<br />
+本倫理システムが、<br />
+明確な運用コストを前提としているためである。</p>
+<p>ここで言う運用コストとは、<br />
+時間や労力だけを指すものではない。<br />
+人間や世界についての理解を継続的に更新し続ける認知的負荷、<br />
+判断不能や失敗を引き受け続ける精神的負荷、<br />
+結果を回収し続けるための注意と省察の負荷を含む。</p>
+<p>本倫理システムは、<br />
+これらの負荷を引き受けることを前提として、<br />
+ようやく成立する構造を持っている。<br />
+したがって、<br />
+その前提を共有しない他者に対して、<br />
+同様の運用を期待することは適切ではないと考えている。</p>
+<p>また、<br />
+私がこの倫理システムを運用し続ける理由は、<br />
+それ自体が正しいと証明されたからではない。<br />
+私が平和・平等・自由がある世界を希求しているという、<br />
+一種の信仰的な前提に基づいている。</p>
+<p>この前提は、<br />
+検証可能な事実ではなく、<br />
+他者に強制されるべきものでもない。<br />
+同時に、<br />
+この前提自体も将来的に更新されうるものであり、<br />
+絶対的な基準として固定されているわけではない。</p>
+<p>以上の理由から、<br />
+本書は倫理システムの構造と運用を記述するにとどめ、<br />
+それを他者に勧めることや、<br />
+普遍的な規範として提示することを意図しない。</p>
+<h2 id="付録-検証">付録　検証</h2>
+<p>― この倫理はどこで壊れるか ―</p>
+<p>本層は、本書で記述された倫理システムを<br />
+強化・補正・正当化することを目的としない。</p>
+<p>倫理システムが適用範囲内で運用された場合であっても、<br />
+内部的に処理できなくなる状況や、<br />
+判断が成立しなくなる条件を整理するための補助資料である。</p>
+<h3 id="第-16-章-想定される破綻ケース">第 16 章　想定される破綻ケース</h3>
+<p>本章では、この倫理システムが<br />
+設計どおりに運用された場合であっても、<br />
+内部的に判断を返せなくなる状況を扱う。</p>
+<p>ここで示すのは、<br />
+誤用や逸脱によって生じる問題ではなく、<br />
+倫理システム自身の判断構造が停止する条件である。</p>
+<h4 id="不可逆影響の比較が成立しないケース">16-1. 不可逆影響の比較が成立しないケース</h4>
+<ul>
+<li>複数の行為選択肢が存在するが、
+<ul>
+<li>それぞれが異なる種類の不可逆影響を伴う</li>
+<li>共通の評価軸に還元できない</li>
 </ul></li>
-<li>項目3</li>
+<li>影響の重大性や回復不能性を比較する前提が成立しない</li>
 </ul>
-<h3 id="順序付きリスト">順序付きリスト</h3>
-<ol type="1">
-<li>最初の項目</li>
-<li>二番目の項目
-<ol type="1">
-<li>サブ項目2.1</li>
-<li>サブ項目2.2</li>
-</ol></li>
-<li>三番目の項目</li>
-</ol>
-<h3 id="タスクリスト">タスクリスト</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" />未完了のタスク</label></li>
-<li><label><input type="checkbox"
-checked="" />完了したタスク</label></li>
-<li><label><input type="checkbox" />別のタスク</label></li>
+<p>この場合、<br />
+倫理システムは行為の優劣を判断できず、<br />
+判断不能として停止する。</p>
+<h4 id="長期的累積的影響が評価不能なケース">16-2. 長期的・累積的影響が評価不能なケース</h4>
+<ul>
+<li>単一の行為は軽微である</li>
+<li>しかし、反復によって不可逆影響が蓄積される</li>
+<li>その累積がどの時点で境界条件を越えるかが予測できない</li>
 </ul>
-<h2 id="引用">引用</h2>
-<blockquote>
-<p>これは引用です。</p>
-<p>複数行の引用です。</p>
-</blockquote>
-<blockquote>
-<p>ネストされた引用</p>
-<blockquote>
-<p>二重引用</p>
-</blockquote>
-</blockquote>
-<h2 id="コードブロック">コードブロック</h2>
-<h3 id="インラインコード">インラインコード</h3>
-<p>関数<code>print("Hello, World!")</code>を呼び出します。</p>
-<h3 id="コードブロック-1">コードブロック</h3>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hello():</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello, World!&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">hello</span>() {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, World!&quot;</span>)<span class="op">;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<h2 id="リンクと画像">リンクと画像</h2>
-<h3 id="リンク">リンク</h3>
-<p><a href="https://www.google.com">Google</a> へのリンクです。</p>
-<p><a href="README.md">相対リンク</a> です。</p>
-<h3 id="画像">画像</h3>
-<p><img src="https://via.placeholder.com/150" alt="テスト画像" />
-（プレースホルダー画像）</p>
-<h2 id="テーブル">テーブル</h2>
-<table>
+<p>このような状況では、<br />
+倫理システムは事前判断として機能せず、<br />
+事後的な回収にも限界が生じる。</p>
+<h4 id="当事者性が無限に拡散するケース">16-3. 当事者性が無限に拡散するケース</h4>
+<ul>
+<li>行為の影響範囲が時間的・空間的に広がり続ける</li>
+<li>当事者を特定できない、または無限に増加する</li>
+<li>責任の帰属先が分解不能になる</li>
+</ul>
+<p>この場合、<br />
+誠実・責任・回収といった運用概念が成立しなくなる。</p>
+<h4 id="判断不能が恒常化するケース">16-4. 判断不能が恒常化するケース</h4>
+<ul>
+<li>判断不能な状況が一時的ではなく、常態化する</li>
+<li>いかなる行為選択も境界条件に抵触する</li>
+<li>不作為もまた不可逆影響を生む</li>
+</ul>
+<p>この状態では、<br />
+倫理システムは行為選択の補助装置としての役割を失う。</p>
+<h4 id="本章の位置づけ-14">16-5. 本章の位置づけ</h4>
+<p>本章で挙げた破綻ケースは、<br />
+倫理システムの欠陥を示すものではない。</p>
+<p>むしろ、</p>
+<ul>
+<li>判断を強行しない</li>
+<li>正当化を行わない</li>
+<li>偽の解を提示しない</li>
+</ul>
+<p>という設計選択が、<br />
+<strong>判断不能という形で可視化された結果</strong>である。</p>
+<p>本章は、<br />
+これらの破綻を回避することや、<br />
+代替案を提示することを目的としない。</p>
+<h3 id="第-17-章-誤用誤読の可能性再整形案">第 17 章　誤用・誤読の可能性（再整形案）</h3>
+<p>本章では、この倫理システムが<br />
+設計意図とは異なるかたちで読まれたり、<br />
+部分的に切り出されて運用された場合に生じうる<br />
+誤用・誤読のパターンを扱う。</p>
+<p>ここで示すのは、<br />
+倫理システムそのものの欠陥ではなく、<br />
+<strong>読解や運用の文脈に起因する歪み</strong>である。</p>
+<h4 id="例外が免罪符として読まれるケース">17-1.「例外」が免罪符として読まれるケース</h4>
+<ul>
+<li>第 4 部で扱われる「例外」という概念が、
+<ul>
+<li>原理を一時的に曲げるための限定的運用である点を無視され、</li>
+<li>行為を正当化するための口実として解釈される</li>
+</ul></li>
+<li>「例外である」という宣言自体が、<br />
+判断の検討を省略する理由として用いられる</li>
+</ul>
+<p>この読まれ方では、<br />
+例外は歪みではなく常態となり、<br />
+原理は事実上無効化される。</p>
+<h4 id="管理が支配加害と同一視されるケース">17-2.「管理」が支配・加害と同一視されるケース</h4>
+<ul>
+<li>第 13 章で定義された管理が、
+<ul>
+<li>不可逆影響を抑制するための暫定運用である点を無視され、</li>
+<li>他者の自由を恒常的に制限する行為として理解される</li>
+</ul></li>
+<li>管理の開始条件や終了条件が読まれない</li>
+</ul>
+<p>この場合、<br />
+管理は運用上の判断ではなく、<br />
+倫理的評価の対象として誤認される。</p>
+<h4 id="隔離切断排除が制裁と解釈されるケース">17-3.「隔離・切断・排除」が制裁と解釈されるケース</h4>
+<ul>
+<li>第 14 章で扱われる関係性の終了が、
+<ul>
+<li>責任追及や報復の手段として理解される</li>
+</ul></li>
+<li>排除が、倫理的優位性の表明として読まれる</li>
+</ul>
+<p>この読解では、<br />
+関係の終了は不可逆影響を止める操作ではなく、<br />
+価値判断の宣言へと変質する。</p>
+<h4 id="結論を与えないが責任放棄と解釈されるケース">17-4.「結論を与えない」が責任放棄と解釈されるケース</h4>
+<ul>
+<li>終章で明示される「結論を与えない」という立場が、
+<ul>
+<li>判断を避ける態度</li>
+<li>責任を引き受けない態度、として理解される</li>
+</ul></li>
+<li>倫理システムが、行為の結果を引き受ける主体を不在化させていると誤解される</li>
+</ul>
+<p>この誤読では、<br />
+判断の停止と責任の拒否が同一視される。</p>
+<h4 id="倫理システムが一般理論として読まれるケース">17-5. 倫理システムが一般理論として読まれるケース</h4>
+<ul>
+<li>本書が「私」を唯一の実行主体としている点が見落とされ、
+<ul>
+<li>他者の行為評価</li>
+<li>集団への規範適用、に転用される</li>
+</ul></li>
+<li>倫理システムが、普遍的な正しさを提示していると誤解される</li>
+</ul>
+<p>この場合、<br />
+倫理システムは本来の適用範囲を越えて使用される。</p>
+<h4 id="本章の位置づけ-15">17-6. 本章の位置づけ</h4>
+<p>本章で挙げた誤用・誤読は、<br />
+倫理システムの設計不足を示すものではない。</p>
+<p>むしろ、</p>
+<ul>
+<li>正当化を行わない</li>
+<li>結論を固定しない</li>
+<li>実行主体を限定する</li>
+</ul>
+<p>という設計選択が、<br />
+<strong>読解側の期待と衝突した結果として顕在化</strong>したものである。</p>
+<p>本章は、<br />
+これらの誤読を防止することや、<br />
+是正方法を提示することを目的としない。</p>
+<h3 id="第-18-章-他倫理体系との非互換点">第 18 章　他倫理体系との非互換点</h3>
+<p>本章では、本書で記述された倫理システムが、<br />
+代表的な倫理体系と <strong>どの点で接続不能となるか</strong> を整理する。</p>
+<p>ここで扱うのは、<br />
+思想的な対立や優劣ではなく、<br />
+前提・評価軸・判断構造の違いによって生じる<br />
+<strong>非整合の箇所</strong>である。</p>
+<h4 id="功利主義との非互換点">18-1. 功利主義との非互換点</h4>
+<ul>
+<li>功利主義は、
+<ul>
+<li>行為の結果がもたらす効用の総和や最大化を主要な評価軸とする</li>
+</ul></li>
+<li>本倫理システムは、
+<ul>
+<li>不可逆影響を境界条件として扱い、</li>
+<li>影響の総量比較を前提としない</li>
+</ul></li>
+</ul>
+<p>このため、</p>
+<ul>
+<li>小さな不可逆影響を多数積み重ねる選択</li>
+<li>個別の犠牲を全体の効用増加で相殺する判断</li>
+</ul>
+<p>は、本倫理システムでは判断対象とならない。</p>
+<p>両者は、<br />
+評価可能性の前提において接続しない。</p>
+<h4 id="義務論との非互換点">18-2. 義務論との非互換点</h4>
+<ul>
+<li>義務論は、
+<ul>
+<li>行為の形式や規則遵守を中心に評価する</li>
+</ul></li>
+<li>本倫理システムは、
+<ul>
+<li>行為の形式そのものを評価対象としない</li>
+<li>境界条件への抵触のみを扱う</li>
+</ul></li>
+</ul>
+<p>このため、</p>
+<ul>
+<li>規則に従ったかどうか</li>
+<li>義務を果たしたかどうか</li>
+</ul>
+<p>といった問いは、<br />
+本倫理システムの判断構造には含まれない。</p>
+<h4 id="徳倫理との非互換点">18-3. 徳倫理との非互換点</h4>
+<ul>
+<li>徳倫理は、
+<ul>
+<li>行為者の性格や徳の涵養を重視する</li>
+</ul></li>
+<li>本倫理システムは、
+<ul>
+<li>行為者の内的性質を評価対象としない</li>
+<li>動機や人格的傾向を判断基準に含めない</li>
+</ul></li>
+</ul>
+<p>このため、</p>
+<ul>
+<li>善い人であるか</li>
+<li>誠実な人格を備えているか</li>
+</ul>
+<p>といった評価は、<br />
+本倫理システムでは意味を持たない。</p>
+<h4 id="法制度規範倫理との齟齬">18-4. 法制度・規範倫理との齟齬</h4>
+<ul>
+<li>法制度や社会規範は、
+<ul>
+<li>行為の可否を外部から定める</li>
+<li>違反に対して制裁を伴う</li>
+</ul></li>
+<li>本倫理システムは、
+<ul>
+<li>外部からの拘束を前提としない</li>
+<li>内部的な判断と引き受けのみを扱う</li>
+</ul></li>
+</ul>
+<p>このため、</p>
+<ul>
+<li>違法であるかどうか</li>
+<li>規範に反しているかどうか</li>
+</ul>
+<p>は、<br />
+倫理判断そのものを代替しない。</p>
+<h4 id="普遍倫理としての読解との非互換点">18-5. 普遍倫理としての読解との非互換点</h4>
+<ul>
+<li>本倫理システムは、
+<ul>
+<li>実行主体を私一人に限定している</li>
+</ul></li>
+<li>普遍倫理は、
+<ul>
+<li>誰にでも適用可能であることを前提とする</li>
+</ul></li>
+</ul>
+<p>この点において、<br />
+両者は前提条件を共有しない。</p>
+<h4 id="本章の位置づけ-16">18-6. 本章の位置づけ</h4>
+<p>本章で示した非互換点は、<br />
+本倫理システムの不完全性や欠陥を示すものではない。</p>
+<p>むしろ、</p>
+<ul>
+<li>評価軸を限定する</li>
+<li>正当化を拒否する</li>
+<li>適用範囲を狭く保つ</li>
+</ul>
+<p>という設計選択が、<br />
+<strong>他体系との非接続として現れた結果</strong>である。</p>
+<p>本章は、<br />
+これらの非互換を解消することや、<br />
+調停案を提示することを目的としない。</p>
+<h3 id="第-19-章-本書が引き受けない問い">第 19 章　本書が引き受けない問い</h3>
+<p>本章では、本書で記述された倫理システムが、<br />
+<strong>意図的に扱わない問い</strong>を整理する。</p>
+<p>ここで挙げる問いは、<br />
+重要であるにもかかわらず、<br />
+本書の適用範囲および判断構造には含まれていないものである。</p>
+<h4 id="何が正しいかという問い">19-1. 何が正しいかという問い</h4>
+<ul>
+<li>行為や判断の「正しさ」を定義する問い</li>
+<li>道徳的真理や最善解の存在を前提とする問い</li>
+</ul>
+<p>本書の倫理システムは、<br />
+正しさの定義や証明を目的としない。<br />
+そのため、<br />
+正解を選ぶという形式の問いは引き受けない。</p>
+<h4 id="どちらを選ぶべきかという最終判断の問い">19-2. どちらを選ぶべきかという最終判断の問い</h4>
+<ul>
+<li>複数の選択肢が存在する状況で、
+<ul>
+<li>いずれか一つを最終的に選ぶべきだという問い</li>
+</ul></li>
+<li>判断を外部に委ねる形式の問い</li>
+</ul>
+<p>本書は、<br />
+判断の手続きや限界を記述するにとどまり、<br />
+選択の代行は行わない。</p>
+<h4 id="犠牲は許されるかという価値判断の問い">19-3. 犠牲は許されるかという価値判断の問い</h4>
+<ul>
+<li>目的の達成のために、
+<ul>
+<li>どの程度の犠牲が許容されるか</li>
+</ul></li>
+<li>犠牲の正当化を前提とする問い</li>
+</ul>
+<p>本書の倫理システムは、<br />
+犠牲を比較・正当化する枠組みを持たない。<br />
+したがって、<br />
+犠牲の可否を判断する問いは引き受けない。</p>
+<h4 id="誰が最終責任を負うべきかという帰責の問い">19-4. 誰が最終責任を負うべきかという帰責の問い</h4>
+<ul>
+<li>行為の結果について、
+<ul>
+<li>責任をどこに帰属させるべきか</li>
+</ul></li>
+<li>外部的な責任配分を求める問い</li>
+</ul>
+<p>本書は、<br />
+実行主体自身が結果を引き受ける構造のみを扱い、<br />
+第三者的な帰責配分は対象としない。</p>
+<h4 id="この倫理は他者にも適用されるべきかという問い">19-5. この倫理は他者にも適用されるべきかという問い</h4>
+<ul>
+<li>本書の倫理システムを、
+<ul>
+<li>他者や集団にも適用すべきか</li>
+</ul></li>
+<li>規範としての普遍化を求める問い</li>
+</ul>
+<p>本書は、<br />
+実行主体を私一人に限定しており、<br />
+普遍化の是非を判断しない。</p>
+<h4 id="本章の位置づけ-17">19-6. 本章の位置づけ</h4>
+<p>本章で挙げた問いは、<br />
+無意味であるから排除されているのではない。</p>
+<p>むしろ、</p>
+<ul>
+<li>判断構造が異なる</li>
+<li>評価軸が共有されない</li>
+<li>正当化を必要とする</li>
+</ul>
+<p>といった理由により、<br />
+本書の倫理システムとは <strong>接続しない問い</strong> である。</p>
+<p>本章は、<br />
+これらの問いに答えないこと自体を<br />
+選択として明示する。</p>
+<h2 id="付録-a-適用事例">付録 A 　適用事例</h2>
+<p>本付録は、本書で定義された倫理システムが、<br />
+具体的な状況においてどのように運用されたかを、<br />
+事例として記録したものである。</p>
+<p>ここに示される事例は、<br />
+特定の行為を正当化したり、<br />
+同様の状況における行為を推奨したりするものではない。<br />
+各事例は、<br />
+私が引き受けた判断の構造を示すことのみを目的とする。</p>
+<p>本付録は、<br />
+倫理的判断の正解や模範を示すものではなく、<br />
+本文で定義された原理や運用が、<br />
+どの地点でどのように作用したかを確認するための補助資料である。</p>
+<h3 id="a-1-高所でパニック状態にある人物への介入">A-1 　高所でパニック状態にある人物への介入</h3>
+<h4 id="状況">状況</h4>
+<p>明らかにパニック状態にあり、<br />
+平常時の判断能力が機能していないと判断できる人物が、<br />
+高所において転落や自傷の危険に晒されている。</p>
+<p>当該状況において、<br />
+本人の意思表示は一貫しておらず、<br />
+その場での行為や不作為が、<br />
+将来にわたって不可逆的な結果を生む可能性が高い。</p>
+<h4 id="判断">判断</h4>
+<p>私は、身体的拘束を伴う介入を行い、<br />
+当該人物を安全な場所へ移動させる。</p>
+<p>ただし、<br />
+介入を行わなかった場合であっても、<br />
+それを倫理違反としては扱わない。</p>
+<h4 id="判断に至る構造整理">判断に至る構造整理</h4>
+<p>本事例において考慮された要素は、次の通りである。</p>
+<ul>
+<li><strong>不可逆影響の関与</strong><br />
+転落や重度の身体損傷は、<br />
+成立条件そのものを失わせる不可逆的変化である。</li>
+<li><strong>判断能力の著しい低下</strong><br />
+当該人物は、<br />
+自身の行為がもたらす結果を<br />
+安定して想定できる状態にないと判断された。</li>
+<li><strong>介入による非対称性</strong><br />
+身体的拘束は、<br />
+一時的かつ非対称的な自由制限を伴う。</li>
+</ul>
+<p>これらの要素が同時に存在する状況において、<br />
+原理を厳密に適用し続けた場合、<br />
+より大きな不可逆影響が生じる確度が高いと判断された。</p>
+<h4 id="運用上の扱い">運用上の扱い</h4>
+<p>本事例における介入は、<br />
+「正しい行為」として正当化されるものではない。</p>
+<p>ここで行われているのは、<br />
+原理の例外を、<br />
+局所的・一時的に引き受けるという判断である。</p>
+<p>この判断は、<br />
+恒常化・一般化されることを前提としない。</p>
+<h4 id="結果と引き受け">結果と引き受け</h4>
+<p>介入の結果、<br />
+当該人物は安全な場所へ移動し、<br />
+直接的な不可逆影響は回避された。</p>
+<p>同時に、<br />
+身体的拘束という行為が持つ影響についても、<br />
+行為者である私は、<br />
+その結果を引き受ける立場にある。</p>
+<h4 id="位置づけ">位置づけ</h4>
+<p>本事例は、<br />
+以下の章および判断フローの位置に対応する。</p>
+<ul>
+<li>該当章
+<ul>
+<li>第 11 章「沈黙・介入・当事者性」</li>
+<li>第 12 章「例外という歪み」</li>
+</ul></li>
+<li>判断フロー上の位置
+<ul>
+<li>不可逆影響の関与（第 3 章）</li>
+<li>原理適用の限界</li>
+<li>例外運用（第 12 章）</li>
+</ul></li>
+</ul>
+<p>本事例は、<br />
+同様の状況における行為を推奨するものではない。<br />
+ここに記述されているのは、<br />
+私が引き受けた判断の構造的記録である。</p>
+<h3 id="a-2-情報が不十分な状況における非介入">A-2 　情報が不十分な状況における非介入</h3>
+<h4 id="状況-1">状況</h4>
+<p>第三者に不利益が生じている可能性が示唆されているが、<br />
+事実関係は断片的であり、<br />
+状況の全体像を把握できていない。</p>
+<p>当該状況に介入した場合、<br />
+誤った前提に基づく行為が、<br />
+新たな不可逆影響を生む可能性がある。</p>
+<p>一方で、<br />
+介入を行わない場合にも、<br />
+何らかの結果が生じうることは否定できない。</p>
+<h4 id="判断-1">判断</h4>
+<p>私は、<br />
+現時点では介入を行わないという判断を選択した。</p>
+<p>これは、<br />
+状況を無視することや、<br />
+関与を放棄することを意味しない。<br />
+判断を倫理的に正当化できる条件が、<br />
+現時点では成立していないと整理した結果である。</p>
+<h4 id="判断に至る構造整理-1">判断に至る構造整理</h4>
+<p>本事例において考慮された要素は、次の通りである。</p>
+<ul>
+<li><strong>情報の不十分性</strong><br />
+状況を構成する事実関係が断片的であり、<br />
+因果関係や影響範囲を適切に把握できない。</li>
+<li><strong>誤介入による不可逆影響の可能性</strong><br />
+不完全な前提に基づく介入は、<br />
+取り返しのつかない結果を生む可能性がある。</li>
+<li><strong>非介入も結果に接続されうること</strong><br />
+行為を行わない選択も、<br />
+状況の推移に影響を与えうる。</li>
+</ul>
+<p>これらを踏まえ、<br />
+介入・不介入のいずれについても、<br />
+倫理原理から正当化された判断を生成できない状態にあると整理された。</p>
+<h4 id="運用上の扱い-1">運用上の扱い</h4>
+<p>本事例は、<br />
+沈黙や非介入が、<br />
+自動的に免責されるものではないことを前提とする。</p>
+<p>同時に、<br />
+不十分な情報のもとで判断を強行し、<br />
+偽の解を出すことを避けるため、<br />
+判断不能としての停止が選択された。</p>
+<h4 id="結果と引き受け-1">結果と引き受け</h4>
+<p>非介入の結果、<br />
+状況は行為者の直接的な関与なく推移した。</p>
+<p>その過程で生じた結果について、<br />
+私は、<br />
+それを倫理によって帳消しにすることなく、<br />
+引き受けの対象として保持する。</p>
+<h4 id="位置づけ-1">位置づけ</h4>
+<p>本事例は、<br />
+以下の章および判断フローの位置に対応する。</p>
+<ul>
+<li>該当章
+<ul>
+<li>第 8 章「想定と限界」</li>
+<li>第 11 章「沈黙・介入・当事者性」</li>
+</ul></li>
+<li>判断フロー上の位置
+<ul>
+<li>原理適用の可否検討</li>
+<li>判断不能として停止（第 11 章）</li>
+</ul></li>
+</ul>
+<p>本事例は、<br />
+非介入を正当化するための例ではない。<br />
+ここに記述されているのは、<br />
+判断が生成されなかった状況における、<br />
+判断構造の記録である。</p>
+<h3 id="a-3-他者の判断環境に配慮した沈黙部分的提示を選んだ事例">A-3 　他者の判断環境に配慮した沈黙・部分的提示を選んだ事例</h3>
+<h4 id="状況-2">状況</h4>
+<p>他者が重要な判断を行おうとしている状況において、<br />
+私が把握している情報の一部をそのまま提示した場合、<br />
+当該判断が成立しなくなる、<br />
+もしくは重大な混乱を招く可能性があると判断された。</p>
+<p>一方で、<br />
+事実と異なる情報を提示することは、<br />
+他者の判断環境そのものを操作する行為となり、<br />
+信用関係に不可逆的な影響を与えるおそれがある。</p>
+<h4 id="判断-2">判断</h4>
+<p>私は、<br />
+事実を歪めて提示する行為（嘘）は選択せず、<br />
+沈黙または情報の一部のみを提示するという判断を選択した。</p>
+<p>この判断は、<br />
+他者の判断を完全に成立させることを保証するものではないが、<br />
+判断環境そのものを破壊しないことを優先した結果である。</p>
+<h4 id="判断に至る構造整理-2">判断に至る構造整理</h4>
+<p>本事例において考慮された要素は、次の通りである。</p>
+<ul>
+<li><strong>判断環境の保持</strong><br />
+他者が自らの判断を行うためには、<br />
+情報が完全であることよりも、<br />
+その情報が信頼可能であることが重要である。</li>
+<li><strong>善意のフリーライドの回避</strong><br />
+嘘は、<br />
+他者が前提としている誠実性を一方的に利用する行為であり、<br />
+非対称リスクを生じさせる。</li>
+<li><strong>沈黙・部分的提示という選択肢</strong><br />
+すべてを語らないことは、<br />
+他者の判断を妨げる可能性を含むが、<br />
+判断環境を意図的に歪める行為とは異なる。</li>
+</ul>
+<p>これらを踏まえ、<br />
+他者の判断を最大限成立させつつ、<br />
+混乱や不可逆的な信用破壊を生じさせない境界として、<br />
+沈黙または部分的提示が選択された。</p>
+<h4 id="運用上の扱い-2">運用上の扱い</h4>
+<p>本事例における沈黙・部分的提示は、<br />
+誠実さを完全に満たす行為として正当化されるものではない。</p>
+<p>しかし、<br />
+嘘という行為が持つ高い不可逆リスクを回避するための、<br />
+消極的かつ暫定的な運用判断として位置づけられる。</p>
+<h4 id="結果と引き受け-2">結果と引き受け</h4>
+<p>沈黙または部分的提示の結果、<br />
+他者の判断は限定的な情報のもとで行われることになった。</p>
+<p>そのことによって生じた結果のうち、<br />
+私自身の行為が及ぼした影響についてのみ、<br />
+私は、<br />
+行為者として引き受ける立場にある。</p>
+<h4 id="位置づけ-2">位置づけ</h4>
+<p>本事例は、<br />
+以下の章および判断フローの位置に対応する。</p>
+<ul>
+<li>該当章
+<ul>
+<li>第 9 章「行為生成としての誠実」</li>
+<li>第 11 章「沈黙・介入・当事者性」</li>
+</ul></li>
+<li>判断フロー上の位置
+<ul>
+<li>判断不能状態の発生</li>
+<li>沈黙・部分的提示という選択</li>
+<li>判断環境保持の優先</li>
+</ul></li>
+</ul>
+<p>本事例は、<br />
+沈黙や部分的提示を推奨する基準を示すものではない。<br />
+ここに記述されているのは、<br />
+私が引き受けた判断構造の記録である。</p>
+<h3 id="a-4-関係維持のために行為選択を制限した暫定的管理">A-4 　関係維持のために行為選択を制限した暫定的管理</h3>
+<h4 id="状況-3">状況</h4>
+<p>継続的な関係性の中で、<br />
+当該相手の行為選択が、<br />
+第三者または関係全体に対して、<br />
+不可逆的な影響を及ぼす可能性が高い状態が観測された。</p>
+<p>この状況において、<br />
+即時に関係を断つことは可能であったが、<br />
+それ自体が新たな不可逆影響を生む可能性も含んでいた。</p>
+<h4 id="判断-3">判断</h4>
+<p>私は、<br />
+関係を直ちに終了させることは選択せず、<br />
+一定期間、<br />
+相手の行為選択を限定する形で関与を継続するという判断を行った。</p>
+<p>これは、<br />
+相手の自由を恒常的に制限することを意図したものではなく、<br />
+状況の推移を観察し、<br />
+より大きな破綻を回避するための暫定的判断である。</p>
+<h4 id="判断に至る構造整理-3">判断に至る構造整理</h4>
+<p>本事例において考慮された要素は、次の通りである。</p>
+<ul>
+<li><strong>不可逆影響の予見可能性</strong><br />
+現状のまま行為選択が続いた場合、<br />
+回収不能な結果が生じる可能性が高いと判断された。</li>
+<li><strong>自由制限の非対称性</strong><br />
+行為選択の制限は、<br />
+相手に対して非対称的な負荷を与える。</li>
+<li><strong>関係維持による回収可能性</strong><br />
+関係を完全に断つよりも、<br />
+一定の関与を続ける方が、<br />
+結果を回収できる余地が残ると判断された。</li>
+</ul>
+<p>これらを踏まえ、<br />
+原理を厳密に適用し続けることが、<br />
+かえって不可逆影響を拡大させる局面として、<br />
+暫定的な管理が選択された。</p>
+<h4 id="運用上の扱い-3">運用上の扱い</h4>
+<p>本事例における管理は、<br />
+正当化された支配や指導ではない。</p>
+<p>行為選択の制限は、<br />
+例外的かつ一時的な運用としてのみ位置づけられ、<br />
+恒常化した場合には、<br />
+本倫理システムの適用継続自体が再検討される対象となる。</p>
+<h4 id="結果と引き受け-3">結果と引き受け</h4>
+<p>管理を行った結果、<br />
+短期的には、<br />
+不可逆的な結果の発生は回避された。</p>
+<p>同時に、<br />
+自由制限という行為がもたらす影響について、<br />
+私は、<br />
+私自身の行為の結果として、<br />
+その影響を引き受ける立場にある。</p>
+<h4 id="位置づけ-3">位置づけ</h4>
+<p>本事例は、<br />
+以下の章および判断フローの位置に対応する。</p>
+<ul>
+<li>該当章
+<ul>
+<li>第 13 章「管理と自由制限」</li>
+</ul></li>
+<li>判断フロー上の位置
+<ul>
+<li>原理適用の限界</li>
+<li>暫定的管理という選択</li>
+</ul></li>
+</ul>
+<p>本事例は、<br />
+管理を正当化する基準を示すものではない。<br />
+ここに記述されているのは、<br />
+私が引き受けた判断構造の記録である。</p>
+<h3 id="a-5-関係性を継続しないという判断隔離切断">A-5 　関係性を継続しないという判断（隔離・切断）</h3>
+<h4 id="状況-4">状況</h4>
+<p>継続的な関係性の中で、<br />
+相手との関与を続けること自体が、<br />
+第三者または関係全体に対して、<br />
+不可逆的な影響を及ぼし続ける状態に至った。</p>
+<p>暫定的な管理や行為選択の制限によっても、<br />
+影響の拡大を抑止できる見込みが立たず、<br />
+関与を続ける限り、<br />
+同型の問題が反復されると判断された。</p>
+<h4 id="判断-4">判断</h4>
+<p>私は、<br />
+関係性をこれ以上継続しないという判断を選択した。</p>
+<p>これは、<br />
+相手を排除したり、<br />
+倫理的に断罪することを目的としたものではない。<br />
+関与を続けることによって生じる影響を、<br />
+これ以上引き受け続けないという判断である。</p>
+<h4 id="判断に至る構造整理-4">判断に至る構造整理</h4>
+<p>本事例において考慮された要素は、次の通りである。</p>
+<ul>
+<li><strong>影響の反復性</strong><br />
+同様の問題が繰り返し発生しており、<br />
+個別の対応では回収できない状態にある。</li>
+<li><strong>関与自体の破壊性</strong><br />
+行為や不作為の内容にかかわらず、<br />
+関与を続けること自体が、<br />
+不可逆影響を生み続ける構造に陥っている。</li>
+<li><strong>代替不能リスクの顕在化</strong><br />
+関係の継続が、<br />
+他の関係や成立条件を犠牲にする局面に至った。</li>
+</ul>
+<p>これらを踏まえ、<br />
+原理を維持したまま運用を続けることが不可能な段階として、<br />
+関係性の終了が選択された。</p>
+<h4 id="運用上の扱い-4">運用上の扱い</h4>
+<p>本事例における隔離・切断は、<br />
+例外的な懲罰や制裁ではない。</p>
+<p>これは、<br />
+管理や介入といった手段を用いても、<br />
+倫理システムの運用が成立しなくなった地点で行われる、<br />
+最終段階の判断である。</p>
+<h4 id="結果と引き受け-4">結果と引き受け</h4>
+<p>関係性を終了した結果、<br />
+当該関係から生じていた影響は、<br />
+私の行為圏から切り離された。</p>
+<p>同時に、<br />
+関係を終了するという行為がもたらす影響について、<br />
+私は、<br />
+私自身の判断の結果として、<br />
+その影響を引き受ける立場にある。</p>
+<h4 id="位置づけ-4">位置づけ</h4>
+<p>本事例は、<br />
+以下の章および判断フローの位置に対応する。</p>
+<ul>
+<li>該当章
+<ul>
+<li>第 14 章「隔離・切断・排除」</li>
+</ul></li>
+<li>判断フロー上の位置
+<ul>
+<li>管理の限界</li>
+<li>関係性の終了という選択</li>
+</ul></li>
+</ul>
+<p>本事例は、<br />
+関係を断つことを推奨する基準を示すものではない。<br />
+ここに記述されているのは、<br />
+私が引き受けた判断構造の記録である。</p>
+<h2 id="付録-b-構造理解補助">付録 B 構造理解補助</h2>
+<p>本付録は、本書で定義された倫理システムの構造を、<br />
+理解補助のために図示・整理したものである。</p>
+<p>ここに示される図や表は、<br />
+行為の正しさや特定の選択を判断・推奨するものではない。<br />
+判断を自動化する手順を示すものでもない。</p>
+<p>本付録の目的は、<br />
+本文中で定義された各章・各概念が、<br />
+どのような位置関係にあるかを参照可能にすることにある。<br />
+図中の用語や分岐の意味は、<br />
+必ず本文を参照して理解されたい。</p>
+<h3 id="付録-b-1-全体レイヤー構造">付録 B-1 　全体レイヤー構造</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 26%" />
+<col style="width: 45%" />
+<col style="width: 6%" />
+<col style="width: 15%" />
+</colgroup>
 <thead>
 <tr>
-<th>ヘッダー1</th>
-<th>ヘッダー2</th>
-<th>ヘッダー3</th>
+<th>レイヤー</th>
+<th>役割</th>
+<th>何をしているか</th>
+<th>該当部</th>
+<th>該当章</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>データ1</td>
-<td>データ2</td>
-<td>データ3</td>
+<td>Layer0</td>
+<td>本書の適用範囲・実行主体の限定</td>
+<td>この文書が何を扱い、何を扱わないかを明示する</td>
+<td>序論</td>
+<td>序論</td>
 </tr>
 <tr>
-<td>データ4</td>
-<td>データ5</td>
-<td>データ6</td>
+<td>Layer1</td>
+<td>世界モデル</td>
+<td>判断以前に成立している世界と人間の前提条件を確認する</td>
+<td>第 1 部</td>
+<td>第 1 章・第 2 章</td>
+</tr>
+<tr>
+<td>Layer2</td>
+<td>倫理原理（境界条件）</td>
+<td>判断が越えてはならない境界条件を定義する</td>
+<td>第 2 部</td>
+<td>第 3 章〜第 6 章</td>
+</tr>
+<tr>
+<td>Layer3</td>
+<td>判断と行為の生成・回収</td>
+<td>判断が生成・停止・破綻する様式を整理する</td>
+<td>第 3 部</td>
+<td>第 7 章〜第 11 章</td>
+</tr>
+<tr>
+<td>^</td>
+<td>運用の限界と勾配</td>
+<td>^</td>
+<td>第 4 部</td>
+<td>第 12 章〜第 14 章</td>
+</tr>
+<tr>
+<td>Layer4</td>
+<td>倫理システムの存続判断</td>
+<td>倫理システム自体を続けるか否かを判断する</td>
+<td>第 5 部</td>
+<td>第 15 章</td>
 </tr>
 </tbody>
 </table>
-<h3 id="整列テーブル">整列テーブル</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">左揃え</th>
-<th style="text-align: center;">中央揃え</th>
-<th style="text-align: right;">右揃え</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">左</td>
-<td style="text-align: center;">中央</td>
-<td style="text-align: right;">右</td>
-</tr>
-<tr>
-<td style="text-align: left;">左</td>
-<td style="text-align: center;">中央</td>
-<td style="text-align: right;">右</td>
-</tr>
-</tbody>
-</table>
-<h2 id="水平線">水平線</h2>
-<hr />
-<h2 id="脚注">脚注</h2>
-<p>これは脚注の例です<a href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a>。</p>
-<h2 id="定義リスト">定義リスト</h2>
-<dl>
-<dt>用語1</dt>
-<dd>
-定義1の説明です。
-</dd>
-<dt>用語2</dt>
-<dd>
-定義2の説明です。 複数行の定義も可能です。
-</dd>
-</dl>
-<h2 id="強調ハイライト">強調（ハイライト）</h2>
-<p>これは==ハイライトされたテキスト==です。</p>
-<h2 id="html要素">HTML要素</h2>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-class&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>これはカスタムCSSクラスを適用した<span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span>要素です。</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div>
-<p><span style="color: red;">赤いテキスト</span></p>
-<h2 id="数式mathjax対応の場合">数式（MathJax対応の場合）</h2>
-<p>インライン数式: <span class="math inline">\(E = mc^2\)</span></p>
-<p>ブロック数式: <span class="math display">\[
-\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
-\]</span></p>
-<h2 id="目次テスト用の追加見出し">目次テスト用の追加見出し</h2>
-<h3 id="セクションa">セクションA</h3>
-<h4 id="サブセクションa1">サブセクションA1</h4>
-<h4 id="サブセクションa2">サブセクションA2</h4>
-<h3 id="セクションb">セクションB</h3>
-<h4 id="サブセクションb1">サブセクションB1</h4>
-<h5 id="サブサブセクションb1.1">サブサブセクションB1.1</h5>
-<h5 id="サブサブセクションb1.2">サブサブセクションB1.2</h5>
-<h3 id="セクションc">セクションC</h3>
-<h2 id="結論">結論</h2>
-<p>このドキュメントはMarkdownの基本構文を網羅しています。Pandocで変換して目次とスタイルが正しく適用されるか確認してください。</p>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>これは脚注の内容です。<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+<h3 id="付録-b-2-判断フロー">付録 B-2 　判断フロー</h3>
+<p>以下は判断を導くアルゴリズムではなく、<br />
+判断がどの地点で切り替わるかを示す構造図である。</p>
+<figure>
+<img src="flow.drawio.svg" alt="図：判断フロー" />
+<figcaption aria-hidden="true">図：判断フロー</figcaption>
+</figure>
+<h2 id="付録-c-倫理システムに関する問答">付録 C 　倫理システムに関する問答</h2>
+<h3 id="q1.-この倫理システムは生きているだけで不可逆影響を生むという矛盾を抱えていませんか">Q1. この倫理システムは、「生きているだけで不可逆影響を生む」という矛盾を抱えていませんか？</h3>
+<p><strong>A.</strong><br />
+そのとおりであり、その緊張は意図的に残されています。</p>
+<p>本倫理システムは、生存そのものを善として正当化しません。<br />
+生きることが資源消費や時間の経過といった不可逆影響を伴う事実を、原理レベルで免責しない設計を採っています。</p>
+<p>それでも生きることを選ぶかどうかは、倫理システムの出力ではなく、私自身の選択です。<br />
+倫理は、その選択が生む影響を見失わないための枠組みとして機能します。</p>
+<h3 id="q2.目的と正当化を分離するとしながら関係の切断第-14-章を行うのは矛盾ではありませんか">Q2.「目的と正当化を分離する」としながら、関係の切断（第 14 章）を行うのは矛盾ではありませんか？</h3>
+<p><strong>A.</strong><br />
+切断は、目的による正当化ではありません。</p>
+<p>関係の切断は、「不可逆影響を止めるために正しい行為を行う」という意味ではなく、<br />
+原理を維持したまま関与を続けることが不可能になった地点を確定させる判断です。</p>
+<p>これは成功でも正解でもなく、倫理システムの運用が破綻したことを明示的に引き受ける操作です。</p>
+<h3 id="q3.-非対称リスクを否定しているにもかかわらず実行主体が私一人であること自体が非対称ではありませんか">Q3. 非対称リスクを否定しているにもかかわらず、実行主体が「私一人」であること自体が非対称ではありませんか？</h3>
+<p><strong>A.</strong><br />
+この倫理は、決定権の非対称性を解消しようとはしません。</p>
+<p>第 5 章で否定しているのは、<br />
+不可逆的なリスクを他者に転嫁し、自らが免責される構造です。</p>
+<p>本倫理システムでは、判断は私が行い、影響も私が引き受けます。<br />
+他者を巻き込んだ判断においても、正当化や免責は発生しません。</p>
+<h3 id="q4.-トロッコ問題のような状況ではこの倫理は何も決定できないのではありませんか">Q4. トロッコ問題のような状況では、この倫理は何も決定できないのではありませんか？</h3>
+<p><strong>A.</strong><br />
+はい。この倫理は、そのような状況で判断不能を出力します。</p>
+<p>これは欠陥ではなく、偽の解を出さないための安全装置です。<br />
+「よりマシな結果」を名目に不可逆影響を正当化することを、この倫理は拒否します。</p>
+<p>判断不能は、事態を改善しないことがあります。<br />
+しかし、改善していると誤認するよりも、破綻を正確に検知する方が誠実であると考えています。</p>
+<h3 id="q5.-この倫理システムは結局のところ何のために存在するのですか">Q5. この倫理システムは、結局のところ何のために存在するのですか？</h3>
+<p><strong>A.</strong><br />
+この倫理システムは、「正しさ」を導くためのものではありません。</p>
+<p>それは、人間と世界を接続する際に駆動するサブシステムであり、<br />
+不可逆影響や非対称性が生じている地点を検知するための装置です。</p>
+<p>この倫理は、行為を促進するアクセルではなく、<br />
+暴走を防ぐためのリミッターであり、損害を計測するためのセンサーです。</p>
+<h3 id="q6.-この倫理を動かしているものは何ですか">Q6. この倫理を動かしているものは何ですか？</h3>
+<p><strong>A.</strong><br />
+この倫理システム自体は動力を持ちません。</p>
+<p>それを動かしているのは、<br />
+私が平和・平等・自由がある世界を望むという信念であり、<br />
+その信念が失われたとき、この倫理もまた更新・破棄されるべき対象となります。</p>
+<p>この依存関係を隠さないことが、本倫理システムの前提です。</p>
+<h2 id="奥付">奥付</h2>
+<ul>
+<li>書名
+<ul>
+<li>ナニカシイラの倫理</li>
+</ul></li>
+<li>著者
+<ul>
+<li>ナニカシイラ</li>
+</ul></li>
+</ul>
+<div class="line-block">稿 | 日付 |<br />
+| - |<br />
+初稿 | 2025 年 12 月 10 日 |<br />
+第二稿 | 2025 年 12 月 15 日 |</div>
+<p>本書は、上記時点における<br />
+著者自身の理解、判断可能性、および<br />
+当該時点で観測されている世界状況を前提として記述されている。</p>
+<p>本書で記述されている倫理および倫理システムは、<br />
+将来にわたって維持されることを前提としない。</p>
+<p>世界状況、著者の理解、判断可能性の変化に応じて、<br />
+本書の内容は更新・修正・破棄されうる。</p>
 </body>
 </html>
