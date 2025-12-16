@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2025-12-15" />
+  <meta name="description" content="本書は、正しさを導く倫理ではない。 判断が破綻する地点を検知するための、倫理システムの記述である。" />
+  <title>ナニカシイラの倫理</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <style>
+  /* マテリアルデザイン風スタイルシート */
+  /* キーカラー: メイン(slateblue系), アクセント(濃いピンク系), ベース(青みがかった白) */
+
+  :root {
+      --primary-color: #6a5acd; /* slateblue */
+      --secondary-color: #ff1493; /* crimson (濃いピンク系) */
+      --background-color: #fafdff; /* aliceblue */
+      --surface-color: #ffffff;
+      --text-primary: #212121;
+      --text-secondary: #757575;
+      --divider-color: #e0e0e0;
+  }
+
+  body {
+      font-family: "Roboto", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background-color: var(--background-color);
+      margin: 0;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--background-color);
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+  }
+
+  /* 見出し */
+  h1, h2, h3, h4, h5, h6 {
+      font-weight: 500;
+      line-height: 1.3;
+      color: var(--primary-color);
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+  }
+
+  h1 {
+      font-size: 2.125rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.5em;
+      page-break-before: always;
+  }
+
+  h2 {
+      font-size: 1.875rem;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.5em;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+  }
+
+  h3 {
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--divider-color);
+      padding-bottom: 0.3em;
+      transition: border-color 0.3s ease;
+  }
+
+  h4 {
+      font-size: 1.25rem;
+  }
+
+  h5 {
+      font-size: 1.125rem;
+  }
+
+  h6 {
+      font-size: 1rem;
+  }
+
+  /* 段落 */
+  p {
+      margin: 1em 0;
+      text-align: justify;
+  }
+
+  /* 太字と斜体 */
+  strong {
+      color: var(--secondary-color);
+  }
+
+  em {
+      color: var(--secondary-color);
+  }
+
+  /* 取り消し線 */
+  del {
+      color: var(--text-secondary);
+  }
+
+  /* リンク */
+  a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+  }
+
+  a:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+  }
+
+  a:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+  }
+
+  /* 引用 */
+  blockquote {
+      margin: 1.5em 0;
+      padding: 1em 1.5em;
+      border-left: 4px solid var(--secondary-color);
+      background-color: rgba(255, 255, 255, 0.8);
+      font-style: italic;
+      color: var(--text-secondary);
+  }
+
+  /* ネストされた引用 */
+  blockquote blockquote {
+      border-left-color: var(--primary-color);
+      background-color: rgba(255, 255, 255, 0.9);
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      font-style: normal;
+  }
+
+  /* コード */
+  code {
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-family: "Roboto Mono", "Noto Sans Mono", monospace;
+      font-size: 0.9em;
+  }
+
+  pre {
+      background-color: #f5f5f5;
+      padding: 1em;
+      border-radius: 4px;
+      overflow-x: auto;
+      border: 1px solid var(--divider-color);
+  }
+
+  pre code {
+      background: none;
+      padding: 0;
+  }
+
+  /* リスト */
+  ul, ol {
+      margin: 1em 0;
+      padding-left: 2em;
+  }
+
+  li {
+      margin: 0.5em 0;
+  }
+
+  /* テーブル */
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1em 0;
+      background-color: var(--surface-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+  }
+
+  th, td {
+      padding: 0.75em;
+      text-align: left;
+      border-bottom: 1px solid var(--divider-color);
+  }
+
+  th {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 500;
+  }
+
+  tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  /* 水平線 */
+  hr {
+      border: none;
+      height: 1px;
+      background-color: var(--divider-color);
+      margin: 2em 0;
+  }
+
+  /* 画像 */
+  img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 目次 */
+  nav#TOC {
+      background-color: var(--surface-color);
+      padding: 1em;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2em;
+      font-size: 0.9em;
+  }
+
+  nav#TOC ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.4;
+  }
+
+  nav#TOC li {
+      margin: 0.3em 0;
+  }
+
+  nav#TOC a {
+      color: var(--text-primary);
+      text-decoration: none;
+      display: block;
+      padding: 0.25em 0;
+  }
+
+  nav#TOC a:hover {
+      background-color: rgba(106, 90, 205, 0.1);
+      border-radius: 4px;
+      padding-left: 0.5em;
+  }
+
+  /* タスクリスト */
+  .task-list-item {
+      list-style: none;
+  }
+
+  .task-list-item input[type="checkbox"] {
+      margin-right: 0.5em;
+  }
+
+  /* 数式 */
+  .math {
+      font-family: "Latin Modern Math", "STIX", serif;
+  }
+
+  /* フッター */
+  footer {
+      margin-top: 3em;
+      padding-top: 1em;
+      border-top: 1px solid var(--divider-color);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9em;
+  }
+
+  /* レスポンシブデザイン */
+  @media (max-width: 600px) {
+      body {
+          padding: 10px;
+      }
+
+      h1 {
+          font-size: 1.75rem;
+      }
+
+      h2 {
+          font-size: 1.5rem;
+      }
+
+      table {
+          font-size: 0.9em;
+      }
+  }
+
+  /* ダークモード対応 */
+  @media (prefers-color-scheme: dark) {
+      :root {
+          --background-color: #121212;
+          --surface-color: #1e1e1e;
+          --text-primary: #e0e0e0;
+          --text-secondary: #b0b0b0;
+          --divider-color: #333333;
+      }
+      body {
+          background-color: var(--background-color);
+          color: var(--text-primary);
+      }
+      h1, h2, h3, h4, h5, h6 {
+          color: var(--primary-color);
+      }
+      h2 {
+          background-color: var(--primary-color);
+          color: white;
+      }
+      blockquote {
+          background-color: rgba(30, 30, 30, 0.8);
+          color: var(--text-secondary);
+      }
+      table {
+          background-color: var(--surface-color);
+      }
+      th {
+          background-color: var(--primary-color);
+      }
+      nav#TOC {
+          background-color: var(--surface-color);
+      }
+  }
+
+  /* 印刷時の最適化強化 */
+  @media print {
+      html {
+          background-color: white;
+      }
+      body {
+          background-color: transparent;
+          color: black;
+          font-size: 12pt;
+          padding: 0;
+      }
+      p, h2, h3 {
+          orphans: 3;
+          widows: 3;
+      }
+      h2, h3, h4 {
+          page-break-after: avoid;
+      }
+      a {
+          color: black;
+          text-decoration: underline;
+      }
+      nav#TOC {
+          display: none;
+      }
+      img {
+          max-width: 100%;
+          page-break-inside: avoid;
+      }
+  }
+
+  /* スクロールバーのスタイル */
+  ::-webkit-scrollbar {
+      width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+      background: var(--background-color);
+  }
+  ::-webkit-scrollbar-thumb {
+      background: var(--divider-color);
+      border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-color);
+  }
+
+  /* アクセシビリティの強化 */
+  @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+      }
+  }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">ナニカシイラの倫理</h1>
+<p class="date">2025-12-15</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">目次</h2>
+<ul>
+<li><a href="#ナニカシイラの倫理---markdownテストドキュメント"
+id="toc-ナニカシイラの倫理---markdownテストドキュメント">ナニカシイラの倫理
+- Markdownテストドキュメント</a>
+<ul>
+<li><a href="#はじめに" id="toc-はじめに">はじめに</a></li>
+<li><a href="#見出しのテスト"
+id="toc-見出しのテスト">見出しのテスト</a></li>
+<li><a href="#テキストフォーマット"
+id="toc-テキストフォーマット">テキストフォーマット</a></li>
+<li><a href="#リスト" id="toc-リスト">リスト</a></li>
+<li><a href="#引用" id="toc-引用">引用</a></li>
+<li><a href="#コードブロック"
+id="toc-コードブロック">コードブロック</a></li>
+<li><a href="#リンクと画像" id="toc-リンクと画像">リンクと画像</a></li>
+<li><a href="#テーブル" id="toc-テーブル">テーブル</a></li>
+<li><a href="#水平線" id="toc-水平線">水平線</a></li>
+<li><a href="#脚注" id="toc-脚注">脚注</a></li>
+<li><a href="#定義リスト" id="toc-定義リスト">定義リスト</a></li>
+<li><a href="#強調ハイライト"
+id="toc-強調ハイライト">強調（ハイライト）</a></li>
+<li><a href="#html要素" id="toc-html要素">HTML要素</a></li>
+<li><a href="#数式mathjax対応の場合"
+id="toc-数式mathjax対応の場合">数式（MathJax対応の場合）</a></li>
+<li><a href="#目次テスト用の追加見出し"
+id="toc-目次テスト用の追加見出し">目次テスト用の追加見出し</a></li>
+<li><a href="#結論" id="toc-結論">結論</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1
+id="ナニカシイラの倫理---markdownテストドキュメント">ナニカシイラの倫理
+- Markdownテストドキュメント</h1>
+<h2 id="はじめに">はじめに</h2>
+<p>これは、Pandocでの目次生成とstyle.cssの挙動を確認するためのテストドキュメントです。Markdownの基本的な構文をすべてテストしています。</p>
+<h2 id="見出しのテスト">見出しのテスト</h2>
+<h3 id="レベル3の見出し">レベル3の見出し</h3>
+<h4 id="レベル4の見出し">レベル4の見出し</h4>
+<h5 id="レベル5の見出し">レベル5の見出し</h5>
+<h6 id="レベル6の見出し">レベル6の見出し</h6>
+<h2 id="テキストフォーマット">テキストフォーマット</h2>
+<p>これは<strong>太字</strong>のテキストです。</p>
+<p>これは<em>斜体</em>のテキストです。</p>
+<p>これは<del>取り消し線</del>のテキストです。</p>
+<p>これは<code>インラインコード</code>です。</p>
+<p>組み合わせ: <strong><em>太字斜体</em></strong> や
+<strong>太字と<code>コード</code></strong>。</p>
+<h2 id="リスト">リスト</h2>
+<h3 id="順序なしリスト">順序なしリスト</h3>
+<ul>
+<li>項目1</li>
+<li>項目2
+<ul>
+<li>サブ項目2.1</li>
+<li>サブ項目2.2</li>
+</ul></li>
+<li>項目3</li>
+</ul>
+<h3 id="順序付きリスト">順序付きリスト</h3>
+<ol type="1">
+<li>最初の項目</li>
+<li>二番目の項目
+<ol type="1">
+<li>サブ項目2.1</li>
+<li>サブ項目2.2</li>
+</ol></li>
+<li>三番目の項目</li>
+</ol>
+<h3 id="タスクリスト">タスクリスト</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" />未完了のタスク</label></li>
+<li><label><input type="checkbox"
+checked="" />完了したタスク</label></li>
+<li><label><input type="checkbox" />別のタスク</label></li>
+</ul>
+<h2 id="引用">引用</h2>
+<blockquote>
+<p>これは引用です。</p>
+<p>複数行の引用です。</p>
+</blockquote>
+<blockquote>
+<p>ネストされた引用</p>
+<blockquote>
+<p>二重引用</p>
+</blockquote>
+</blockquote>
+<h2 id="コードブロック">コードブロック</h2>
+<h3 id="インラインコード">インラインコード</h3>
+<p>関数<code>print("Hello, World!")</code>を呼び出します。</p>
+<h3 id="コードブロック-1">コードブロック</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hello():</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello, World!&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">True</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">hello</span>() {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&quot;Hello, World!&quot;</span>)<span class="op">;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<h2 id="リンクと画像">リンクと画像</h2>
+<h3 id="リンク">リンク</h3>
+<p><a href="https://www.google.com">Google</a> へのリンクです。</p>
+<p><a href="README.md">相対リンク</a> です。</p>
+<h3 id="画像">画像</h3>
+<p><img src="https://via.placeholder.com/150" alt="テスト画像" />
+（プレースホルダー画像）</p>
+<h2 id="テーブル">テーブル</h2>
+<table>
+<thead>
+<tr>
+<th>ヘッダー1</th>
+<th>ヘッダー2</th>
+<th>ヘッダー3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>データ1</td>
+<td>データ2</td>
+<td>データ3</td>
+</tr>
+<tr>
+<td>データ4</td>
+<td>データ5</td>
+<td>データ6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="整列テーブル">整列テーブル</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">左揃え</th>
+<th style="text-align: center;">中央揃え</th>
+<th style="text-align: right;">右揃え</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">左</td>
+<td style="text-align: center;">中央</td>
+<td style="text-align: right;">右</td>
+</tr>
+<tr>
+<td style="text-align: left;">左</td>
+<td style="text-align: center;">中央</td>
+<td style="text-align: right;">右</td>
+</tr>
+</tbody>
+</table>
+<h2 id="水平線">水平線</h2>
+<hr />
+<h2 id="脚注">脚注</h2>
+<p>これは脚注の例です<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>。</p>
+<h2 id="定義リスト">定義リスト</h2>
+<dl>
+<dt>用語1</dt>
+<dd>
+定義1の説明です。
+</dd>
+<dt>用語2</dt>
+<dd>
+定義2の説明です。 複数行の定義も可能です。
+</dd>
+</dl>
+<h2 id="強調ハイライト">強調（ハイライト）</h2>
+<p>これは==ハイライトされたテキスト==です。</p>
+<h2 id="html要素">HTML要素</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;custom-class&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>これはカスタムCSSクラスを適用した<span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span>要素です。</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div>
+<p><span style="color: red;">赤いテキスト</span></p>
+<h2 id="数式mathjax対応の場合">数式（MathJax対応の場合）</h2>
+<p>インライン数式: <span class="math inline">\(E = mc^2\)</span></p>
+<p>ブロック数式: <span class="math display">\[
+\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+\]</span></p>
+<h2 id="目次テスト用の追加見出し">目次テスト用の追加見出し</h2>
+<h3 id="セクションa">セクションA</h3>
+<h4 id="サブセクションa1">サブセクションA1</h4>
+<h4 id="サブセクションa2">サブセクションA2</h4>
+<h3 id="セクションb">セクションB</h3>
+<h4 id="サブセクションb1">サブセクションB1</h4>
+<h5 id="サブサブセクションb1.1">サブサブセクションB1.1</h5>
+<h5 id="サブサブセクションb1.2">サブサブセクションB1.2</h5>
+<h3 id="セクションc">セクションC</h3>
+<h2 id="結論">結論</h2>
+<p>このドキュメントはMarkdownの基本構文を網羅しています。Pandocで変換して目次とスタイルが正しく適用されるか確認してください。</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>これは脚注の内容です。<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
