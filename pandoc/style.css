@@ -5,8 +5,8 @@
 :root {
     --primary-color: #6a5acd; /* slateblue */
     --secondary-color: #ff1493; /* crimson (濃いピンク系) */
-    --background-color: #fafdff; /* aliceblue */
-    --surface-color: #ffffff;
+    --background-color: #ffffff /* aliceblue */
+    --surface-color: #fdfdff;
     --text-primary: #212121;
     --text-secondary: #757575;
     --divider-color: #e0e0e0;
@@ -24,6 +24,8 @@ body {
     background: var(--background-color);
     font-size: 1.1rem;
     letter-spacing: 0.02em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 /* 見出し */
@@ -169,12 +171,15 @@ table {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     overflow: hidden;
+    table-layout: fixed;
+    display: table;
 }
 
 th, td {
     padding: 0.75em;
     text-align: left;
     border-bottom: 1px solid var(--divider-color);
+    word-wrap: break-word;
 }
 
 th {
@@ -185,6 +190,12 @@ th {
 
 tr:nth-child(even) {
     background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* テーブル内の要素を幅いっぱいに */
+td * {
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* 水平線 */
