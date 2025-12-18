@@ -1,6 +1,3 @@
-/* マテリアルデザイン風スタイルシート */
-/* キーカラー: メイン(slateblue系), アクセント(濃いピンク系), ベース(青みがかった白) */
-
 :root {
   --primary-color: #6a5acd; /* slateblue */
   --secondary-color: #ff1493; /* crimson (濃いピンク系) */
@@ -24,7 +21,6 @@ body {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
-  background: var(--background-color);
   font-size: 1rem;
   letter-spacing: 0.02em;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -69,19 +65,13 @@ h6 {
   margin-bottom: 0.5em;
 }
 
-h1 {
-  font-size: 2.5rem;
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 0.5em;
-  page-break-before: always;
-}
 
 h1 {
   font-size: 1.725rem;
   background-color: var(--primary-color);
   color: white;
   padding: 0.5em;
-  margin-top: 1.5em;
+  margin-top: 0em;
   margin-bottom: 0.5em;
   border-radius: 4px;
   transition: background-color 0.3s ease;
@@ -275,9 +265,6 @@ nav#TOC li {
 
 nav#TOC ul li ul {
   margin: 0;
-}
-
-nav#TOC ul ul {
   padding-left: 1em;
 }
 
@@ -296,8 +283,7 @@ nav#TOC a:hover {
 /* 名前空間に依存しない保守的な指定 */
 nav#toc ol.toc,
 nav#toc ol,
-nav#toc li,
-nav[role="doc-toc"] ol {
+nav#toc li{
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -305,6 +291,7 @@ nav[role="doc-toc"] ol {
 nav#toc li{
   padding-left:1em !important;
 }
+
 
 /* タスクリスト */
 .task-list-item {

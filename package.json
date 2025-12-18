@@ -1,0 +1,12 @@
+{
+  "name": "nanika_sheila_ethics",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Build scripts and filters for the Nanika Sheila ethics manuscript",
+  "scripts": {
+    "build": "build.bat"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.12.0"
+  }
+}

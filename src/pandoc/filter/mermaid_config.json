@@ -1,0 +1,18 @@
+{
+  "theme": "base",
+  "themeVariables": {
+    "primaryColor": "#fdfdff",
+    "primaryBorderColor": "#6a5acd",
+    "primaryTextColor": "#212121",
+    "secondaryColor": "#ff1493",
+    "secondaryBorderColor": "#ff1493",
+    "secondaryTextColor": "#ffffff",
+    "lineColor": "#6a5acd",
+    "textColor": "#212121",
+    "background": "#ffffff",
+    "mainBkg": "#fdfdff",
+    "tertiaryColor": "#757575",
+    "fontFamily": "'BIZ UDPMincho','Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif"
+  },
+  "themeCSS": ".label foreignObject span{color:#212121;font-size:14px;line-height:1.6;}\n.label foreignObject strong{color:#ff1493;}\n.node rect,.node polygon{rx:6px;ry:6px;stroke-width:2px;}\n.edgeLabel rect{fill:#e0e0e0;stroke:none;}\n.edgeLabel foreignObject span,.edgeLabel span{color:#ffffff;}\n.cluster rect{fill:#fdfdff;stroke:#6a5acd;stroke-dasharray:4 4;}\n"
+}
