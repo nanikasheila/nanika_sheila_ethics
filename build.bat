@@ -35,6 +35,9 @@ set "EPUB_NAME=nanika_sheila_ethics.epub"
 set "HTML_OUT=%BUILD_DIR%\%HTML_NAME%"
 set "EPUB_OUT=%BUILD_DIR%\%EPUB_NAME%"
 set "ASSETS_OUT=%BUILD_DIR%\assets"
+set "SITE_DIR=site"
+set "SITE_INDEX=%SITE_DIR%\index.html"
+set "SITE_ASSETS=%SITE_DIR%\assets"
 
 REM === Create output dirs ===
 if not exist "%BUILD_DIR%" mkdir "%BUILD_DIR%"
@@ -107,7 +110,45 @@ if errorlevel 1 (
 
 popd
 
+REM === Prepare GitHub Pages site output ===
+if exist "%SITE_DIR%" (
+  rmdir /s /q "%SITE_DIR%"
+  if exist "%SITE_DIR%" (
+    echo [ERROR] Failed to clean %SITE_DIR%
+    exit /b 1
+  )
+)
+
+mkdir "%SITE_DIR%"
+if errorlevel 1 (
+  echo [ERROR] Failed to create %SITE_DIR%
+  exit /b 1
+)
+
+copy /y "%HTML_OUT%" "%SITE_INDEX%" >nul
+if errorlevel 1 (
+  echo [ERROR] Failed to copy HTML to %SITE_INDEX%
+  exit /b 1
+)
+
+copy /y "%BUILD_DIR%\style.css" "%SITE_DIR%\style.css" >nul
+if errorlevel 1 (
+  echo [ERROR] Failed to copy style.css to site
+  exit /b 1
+)
+
+if exist "%ASSETS_OUT%" (
+  xcopy "%ASSETS_OUT%\*" "%SITE_ASSETS%\" /E /I /Y >nul
+  if errorlevel 4 (
+    echo [ERROR] Failed to copy assets into %SITE_ASSETS%
+    exit /b 1
+  )
+) else (
+  echo [WARN] Build assets missing; skipping copy to site.
+)
+
 echo [OK] Build finished:
 echo   %HTML_OUT%
 echo   %EPUB_OUT%
+echo   %SITE_INDEX%
 exit /b 0

@@ -1,15 +1,20 @@
 # ナニカシイラの倫理
 
+本書は、ナニカシイラの倫理をまとめた文書です。
+この倫理は正しさを導く倫理ではなく、判断が破綻する地点を検知するための、倫理システムの記述です。
+
+---
+
 本リポジトリは、Markdown で記述した原稿を Pandoc で HTML / EPUB / PDF へ変換するためのプロジェクトです。  
 Mermaid 図は Lua フィルター（`src/pandoc/filter/mermaid_to_svg.lua`）で自動的に SVG にレンダリングされます。
 
 ## 必要なソフトウェア
 
-| 種別 | 必須 | 説明 |
-| --- | --- | --- |
-| Pandoc | はい | 3.x 系推奨。`winget install --id=Pandoc.Pandoc` などで導入。 |
-| Node.js + npm | はい | Mermaid CLI を npm から取得するため。LTS（18 以上）を推奨。 |
-| Mermaid CLI | はい | `npm install` でローカルに導入される（`@mermaid-js/mermaid-cli`）。 |
+| 種別           | 必須 | 説明                                                                             |
+| -------------- | ---- | -------------------------------------------------------------------------------- |
+| Pandoc         | はい | 3.x 系推奨。`winget install --id=Pandoc.Pandoc` などで導入。                     |
+| Node.js + npm  | はい | Mermaid CLI を npm から取得するため。LTS（18 以上）を推奨。                      |
+| Mermaid CLI    | はい | `npm install` でローカルに導入される（`@mermaid-js/mermaid-cli`）。              |
 | LaTeX エンジン | 任意 | PDF を生成したい場合のみ。`xelatex` / `lualatex` / `pdflatex` のいずれかが必要。 |
 
 > **ヒント**: Windows の場合、`winget install --id=OpenJS.NodeJS.LTS` を実行すると Node.js と npm をまとめて入れられます。
@@ -37,8 +42,13 @@ npm run build
 ```
 
 - `build/` 以下に `nanika_sheila_ethics.html` と `nanika_sheila_ethics.epub` が出力されます。
-- Mermaid 図の SVG は `build/assets/mermaid/` にキャッシュされます。  
-  元の Markdown が同じなら再レンダリングを省きます。
+- `site/` に GitHub Pages 公開用のファイル（`index.html`、`style.css`、`assets/`）が再生成されます。
+- Mermaid 図はビルドのたびに再レンダリングされ、SVG にテーマが焼き込まれます。
+
+### GitHub Pages に公開する
+
+`build.bat` 実行後に生成される `site/` をそのまま Pages の公開ルートに置いてください。  
+例: `gh-pages` ブランチに `site/` の中身だけをコミットして push する。
 
 ### Pandoc コマンドを直接実行したい場合
 
@@ -53,7 +63,7 @@ pandoc src/main.md `
   --lua-filter=src/pandoc/filter/mermaid_to_svg.lua `
   --shift-heading-level-by=-1 `
   --toc --toc-depth=2 `
-  --metadata toc-title="???" `
+  --metadata toc-title="目次" `
   --standalone `
   --mathjax `
   --output build/nanika_sheila_ethics.html
@@ -69,7 +79,7 @@ pandoc src/main.md `
   --lua-filter=src/pandoc/filter/mermaid_to_svg.lua `
   --shift-heading-level-by=-1 `
   --toc --toc-depth=2 `
-  --metadata toc-title="???" `
+  --metadata toc-title="目次" `
   --split-level=1 `
   --output build/nanika_sheila_ethics.epub
 ```
@@ -102,5 +112,5 @@ pandoc src/main.md `
 ## トラブルシューティング
 
 - `mmdc` が見つからない: `npm install` 済みか確認する。`node_modules/.bin/mmdc --version` で確認可能。
-- Mermaid のレンダリングに失敗する: `npm install --force` で Puppeteer の依存がそろっているか確認し、再ビルドする。
+- Mermaid のレンダリングに失敗する: `npm install --force` で Puppeteer の依存がそろっているか確認し、再ビルドする。`npx -y @mermaid-js/mermaid-cli@11.12.0` が単体で動けばフィルターからも利用できます。
 - 字体に関する警告: PDF 生成時には日本語フォントの設定が必要になる場合があります。
