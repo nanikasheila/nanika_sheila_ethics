@@ -42,13 +42,13 @@ npm run build
 ```
 
 - `build/` 以下に `nanika_sheila_ethics.html` と `nanika_sheila_ethics.epub` が出力されます。
-- `site/` に GitHub Pages 公開用のファイル（`index.html`、`style.css`、`assets/`）が再生成されます。
+- `docs/` に GitHub Pages 公開用のファイル（`index.html`、`style.css`、`assets/`）が再生成されます。
 - Mermaid 図はビルドのたびに再レンダリングされ、SVG にテーマが焼き込まれます。
 
 ### GitHub Pages に公開する
 
-`build.bat` 実行後に生成される `site/` をそのまま Pages の公開ルートに置いてください。  
-例: `gh-pages` ブランチに `site/` の中身だけをコミットして push する。
+`build.bat` 実行後に生成される `docs/` をそのまま Pages の公開ルートに置いてください。  
+例: `gh-pages` ブランチに `docs/` の中身だけをコミットして push する。
 
 ### Pandoc コマンドを直接実行したい場合
 
@@ -95,7 +95,7 @@ pandoc src/main.md `
   --wrap=preserve `
   --metadata-file=src/pandoc/metadata.yaml `
   --toc --toc-depth=2 `
-  --metadata toc-title="???" `
+  --metadata toc-title="目次" `
   --pdf-engine=xelatex `
   --lua-filter=src/pandoc/filter/mermaid_to_svg.lua `
   --output build/nanika_sheila_ethics.pdf

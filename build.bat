@@ -35,7 +35,7 @@ set "EPUB_NAME=nanika_sheila_ethics.epub"
 set "HTML_OUT=%BUILD_DIR%\%HTML_NAME%"
 set "EPUB_OUT=%BUILD_DIR%\%EPUB_NAME%"
 set "ASSETS_OUT=%BUILD_DIR%\assets"
-set "SITE_DIR=site"
+set "SITE_DIR=docs"
 set "SITE_INDEX=%SITE_DIR%\index.html"
 set "SITE_ASSETS=%SITE_DIR%\assets"
 

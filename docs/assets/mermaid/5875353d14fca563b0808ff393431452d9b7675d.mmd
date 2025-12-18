@@ -1,0 +1,27 @@
+flowchart TB
+
+  %% --- Judgment Layer ---
+  subgraph J["人間の判断（内部過程）"]
+    direction TB
+    J1["認知の不完全性"]
+    J2["予測の不確実性"]
+    J3["情報の欠落・偏在"]
+  end
+
+  %% --- Action Layer ---
+  subgraph A["行為（外部化された選択）"]
+    direction TB
+    ACT["行為"]
+  end
+
+  %% --- World Layer ---
+  subgraph W["世界の変化（判断外部）"]
+    direction TB
+    W1["連鎖性"]
+    W2["不可逆性"]
+    W3["非対称性"]
+  end
+
+  %% --- Relations ---
+  J --> A
+  A --> W

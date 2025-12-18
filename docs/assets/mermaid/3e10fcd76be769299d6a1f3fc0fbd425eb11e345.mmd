@@ -1,0 +1,32 @@
+flowchart TB
+
+  subgraph P["原理運用（通常）"]
+    direction TB
+    P1["境界条件の維持<br>【第12章】"]
+    P2["非対称リスクの回避<br>【第12章】"]
+  end
+
+  subgraph E["例外（局所的歪み）"]
+    direction TB
+    E1["一時的対応<br>【第13章】"]
+    E2["原理の否定ではない<br>【第13章】"]
+    E3["一般化しない<br>【第13章】"]
+  end
+
+  subgraph M["管理（限定的制限）"]
+    direction TB
+    M1["選択肢の制限<br>【第13章】"]
+    M2["暫定性<br>【第13章】"]
+    M3["可視性<br>【第13章】"]
+  end
+
+  subgraph S["隔離・切断・排除"]
+    direction TB
+    S1["関与の終了<br>【第14章】"]
+    S2["被害連鎖の停止<br>【第14章】"]
+    S3["評価・制裁ではない<br>【第14章】"]
+  end
+
+  P --> E
+  E --> M
+  M --> S

@@ -1,0 +1,34 @@
+flowchart TB
+
+  subgraph J["判断（内部生成）"]
+    direction TB
+    J1["暫定性<br>【第7章】"]
+    J2["局所性<br>【第7章】"]
+    J3["非一貫性<br>【第7章】"]
+  end
+
+  subgraph A["行為・不作為（外部化）"]
+    direction TB
+    A1["行為<br>【第8章】"]
+    A2["不作為<br>【第8章】"]
+    A3["沈黙<br>【第11章】"]
+    A4["判断不能<br>【第11章】"]
+  end
+
+  subgraph R["結果（世界への接続）"]
+    direction TB
+    R1["想定内結果<br>【第9章】"]
+    R2["想定外結果<br>【第9章】"]
+    R3["連鎖的影響<br>【第9章】"]
+  end
+
+  subgraph C["回収（因果帰属）"]
+    direction TB
+    C1["寄与の分解<br>【第10章】"]
+    C2["遡及の制限<br>【第10章】"]
+    C3["非難・正当化からの分離<br>【第10章】"]
+  end
+
+  J --> A
+  A --> R
+  R --> C

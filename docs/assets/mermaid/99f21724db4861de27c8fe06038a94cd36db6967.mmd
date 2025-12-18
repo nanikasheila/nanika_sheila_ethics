@@ -1,0 +1,30 @@
+flowchart LR
+
+  subgraph O["倫理システムの運用"]
+    direction TB
+    O1["原理の適用"]
+    O2["運用による回収"]
+    O3["摩耗の蓄積"]
+  end
+
+  subgraph U["更新"]
+    direction TB
+    U1["原理・構造の修正"]
+    U2["同一性を維持"]
+  end
+
+  subgraph D["破棄"]
+    direction TB
+    D1["今後の判断に用いない"]
+    D2["失敗や敗北を意味しない"]
+  end
+
+  subgraph R["再設計"]
+    direction TB
+    R1["原理・評価軸の再定義"]
+    R2["同一性を前提としない"]
+  end
+
+  O --> U
+  O --> D
+  O --> R
