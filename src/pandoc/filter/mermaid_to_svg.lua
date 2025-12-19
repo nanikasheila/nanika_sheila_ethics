@@ -5,6 +5,7 @@
 
 local system = pandoc.system
 local path = pandoc.path
+local utils = pandoc.utils
 
 local outdir = "assets/mermaid"
 
@@ -26,6 +27,16 @@ local function write_file(fname, content)
   local f = assert(io.open(fname, "w"))
   f:write(content)
   f:close()
+end
+
+local function read_file(pathname)
+  local f = io.open(pathname, "r")
+  if not f then
+    return nil
+  end
+  local content = f:read("*a")
+  f:close()
+  return content
 end
 
 local function sha1(s)
@@ -160,10 +171,10 @@ local function run_renderer(cmd, prefix_args, mmd_path, svg_path)
   return true
 end
 
-local function run_mermaid(mmd_path, svg_path)
+local function render_mermaid(mmd_path, output_path)
   local mmdc_cmd = find_command("mmdc")
   if mmdc_cmd then
-    if run_renderer(mmdc_cmd, {}, mmd_path, svg_path) then
+    if run_renderer(mmdc_cmd, {}, mmd_path, output_path) then
       return true
     else
       resolved_cmd["mmdc"] = false
@@ -172,7 +183,7 @@ local function run_mermaid(mmd_path, svg_path)
 
   local npx_cmd = find_command("npx")
   if npx_cmd then
-    if run_renderer(npx_cmd, {"-y", MERMAID_NPM_SPEC}, mmd_path, svg_path) then
+    if run_renderer(npx_cmd, {"-y", MERMAID_NPM_SPEC}, mmd_path, output_path) then
       return true
     else
       resolved_cmd["npx"] = false
@@ -182,6 +193,38 @@ local function run_mermaid(mmd_path, svg_path)
   io.stderr:write("[mermaid_to_svg] Mermaid CLI (mmdc) not found. Install with `npm install` or ensure it is on PATH.\n")
   return false
 end
+
+local function is_latex_output()
+  local format = (FORMAT or ""):lower()
+  return format:match("latex") or format:match("beamer") or format:match("pdf")
+end
+
+local function latex_friendly_path(p)
+  if IS_WINDOWS then
+    return p:gsub("\\", "/")
+  end
+  return p
+end
+
+local function svg_aspect_ratio(svg_file)
+  local content = read_file(svg_file)
+  if not content then
+    return nil
+  end
+  local minx, miny, width, height =
+    content:match('viewBox%s*=%s*"([%-0-9%.]+)%s+([%-0-9%.]+)%s+([%-0-9%.]+)%s+([%-0-9%.]+)"')
+  if not width or not height then
+    return nil
+  end
+  local w = tonumber(width)
+  local h = tonumber(height)
+  if not w or not h or w == 0 then
+    return nil
+  end
+  return h / w
+end
+
+local first_section_seen = false
 
 function CodeBlock(el)
   if not el.classes:includes("mermaid") then
@@ -194,19 +237,95 @@ function CodeBlock(el)
   local id = sha1(src)
   local mmd_path = path.join({outdir, id .. ".mmd"})
   local svg_path = path.join({outdir, id .. ".svg"})
+  local pdf_path = path.join({outdir, id .. ".pdf"})
+  local png_path = path.join({outdir, id .. ".png"})
 
   -- Always rewrite source to ensure renderer gets latest text
   write_file(mmd_path, src)
 
   -- Always re-render so build.bat output never goes stale
-  if not run_mermaid(mmd_path, svg_path) then
+  if not render_mermaid(mmd_path, svg_path) then
     return el
   end
 
-  -- Replace CodeBlock with an image referencing the SVG
-  -- Use Relative path so resource-path / packaging picks it up
-  local img = pandoc.Image({}, svg_path, "diagram")
-  -- Optional: set width via attributes (works best in HTML/PDF; EPUB readers vary)
-  -- img.attributes["style"] = "max-width: 100%; height: auto;"
+  local format = (FORMAT or ""):lower()
+  local need_pdf = format:match("latex") or format:match("beamer") or format:match("pdf")
+  local need_png_base = format:match("docx") or format:match("pptx") or format:match("odt") or format:match("rtf")
+
+  local aspect_ratio = svg_aspect_ratio(svg_path)
+  local latex_tall_diagram = false
+
+  if need_pdf then
+    local rendered = render_mermaid(mmd_path, pdf_path)
+    if not rendered then
+      return el
+    end
+    if is_latex_output() and aspect_ratio and aspect_ratio > 1.8 then
+      latex_tall_diagram = true
+    end
+  end
+
+  local need_png = need_png_base or (latex_tall_diagram and is_latex_output())
+  if need_png then
+    if not render_mermaid(mmd_path, png_path) then
+      return el
+    end
+  end
+
+  if is_latex_output() then
+    local latex_path = latex_tall_diagram and latex_friendly_path(png_path) or latex_friendly_path(pdf_path)
+    local tall_diagram = latex_tall_diagram
+    local figure_tex
+    if tall_diagram then
+      figure_tex = string.format([[
+\begin{center}
+\includegraphics[keepaspectratio,width=\linewidth,height=0.9\textheight]{%s}
+\end{center}
+\par\medskip
+]], latex_path)
+    else
+      figure_tex = string.format([[
+\begin{center}
+\includegraphics[keepaspectratio,width=\linewidth,height=0.8\textheight]{%s}
+\end{center}
+\par\medskip
+]], latex_path)
+    end
+    return pandoc.RawBlock("latex", figure_tex)
+  end
+
+  local chosen_path = svg_path
+  if need_png then
+    chosen_path = png_path
+  end
+  local img = pandoc.Image({}, chosen_path, "diagram")
+  img.attributes["style"] = "display:block;margin:1em auto;text-align:center;"
   return pandoc.Para({img})
+end
+
+function Header(el)
+  if not is_latex_output() then
+    return nil
+  end
+  local blocks = {}
+  local heading_text = utils.stringify(el.content or {}):gsub("%s+", "")
+  if el.level == 2 then
+    if not first_section_seen then
+      first_section_seen = true
+      table.insert(blocks, pandoc.RawBlock("latex", "\\clearpage"))
+    elseif heading_text:find("奥付") then
+      table.insert(blocks, pandoc.RawBlock("latex", "\\clearpage"))
+    end
+    table.insert(blocks, pandoc.RawBlock("latex", "\\Needspace{10\\baselineskip}"))
+  elseif el.level == 3 then
+    table.insert(blocks, pandoc.RawBlock("latex", "\\Needspace{10\\baselineskip}"))
+  elseif el.level == 4 then
+    table.insert(blocks, pandoc.RawBlock("latex", "\\Needspace{7\\baselineskip}"))
+  end
+
+  if #blocks > 0 then
+    table.insert(blocks, el)
+    return blocks
+  end
+  return nil
 end

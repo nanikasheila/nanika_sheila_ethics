@@ -1,0 +1,42 @@
+\usepackage{geometry}
+\geometry{margin=25mm}
+
+\usepackage{setspace}
+\setstretch{1.35}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\nouppercase{\rightmark}}
+\fancyhead[LO]{\nouppercase{\leftmark}}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+
+\usepackage{needspace}
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,height=0.92\textheight,keepaspectratio}
+
+\usepackage{svg}
+\svgsetup{inkscapelatex=false}
+
+\usepackage{titlesec}
+\definecolor{primaryColor}{HTML}{6A5ACD}
+\definecolor{secondaryColor}{HTML}{FF1493}
+\titleformat{\section}{\Large\bfseries\color{primaryColor}}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries\color{primaryColor}}{\thesubsection}{0.75em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{primaryColor}}{\thesubsubsection}{0.75em}{}
+\titlespacing*{\section}{0pt}{1.5em}{0.8em}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.5em}
+\titlespacing*{\subsubsection}{0pt}{0.8em}{0.4em}
+
+\usepackage{enumitem}
+\setlist{itemsep=0.3em}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=primaryColor,
+  urlcolor=secondaryColor,
+  citecolor=primaryColor
+}

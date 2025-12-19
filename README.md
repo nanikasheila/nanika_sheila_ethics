@@ -6,7 +6,7 @@
 ---
 
 本リポジトリは、Markdown で記述した原稿を Pandoc で HTML / EPUB / PDF へ変換するためのプロジェクトです。  
-Mermaid 図は Lua フィルター（`src/pandoc/filter/mermaid_to_svg.lua`）で自動的に SVG にレンダリングされます。
+Mermaid 図は Lua フィルター（`src/pandoc/filter/mermaid_to_svg.lua`）で自動的に SVG/PNG/PDF を生成し、HTML/EPUB/Pages では SVG、PDF では縦横比に応じた PNG を埋め込むので図版の再書き出し忘れがありません。
 
 ## 必要なソフトウェア
 
@@ -41,9 +41,10 @@ Mermaid 図は Lua フィルター（`src/pandoc/filter/mermaid_to_svg.lua`）�
 npm run build
 ```
 
-- `build/` 以下に `nanika_sheila_ethics.html` と `nanika_sheila_ethics.epub` が出力されます。
-- `docs/` に GitHub Pages 公開用のファイル（`index.html`、`style.css`、`assets/`）が再生成されます。
-- Mermaid 図はビルドのたびに再レンダリングされ、SVG にテーマが焼き込まれます。
+- `build/` 以下に `nanika_sheila_ethics.html` / `nanika_sheila_ethics.epub` / `nanika_sheila_ethics.pdf`（利用可能な LaTeX エンジンが見つかった場合）が出力されます。
+  - PDF では既定で `Yu Mincho` / `Yu Gothic` / `MS Gothic` を指定しています（`PDF_MAINFONT` / `PDF_SANFONT` / `PDF_MONOFONT` で任意フォントに変更可）。必要に応じて `Noto Serif/Sans CJK JP` などボールドを含むフォントに切り替えてください。
+  - Mermaid 図は SVG と同時に PNG/PDF も生成され、縦長図は自動で PNG に切り替わるため、LaTeX の制約を気にせず図を配置できます。
+- `docs/` に GitHub Pages 公開用のファイル（`index.html`、`style.css`、`assets/`）が再生成されます。`docs/` のみコミットすれば GitHub Pages へそのまま反映できます。
 
 ### GitHub Pages に公開する
 
@@ -86,7 +87,7 @@ pandoc src/main.md `
 
 ### PDF について
 
-`build.bat` では PDF を生成しません。PDF が必要な場合は、利用できる LaTeX エンジンを指定して Pandoc を実行してください。
+`build.bat` は PC に `xelatex` / `lualatex` / `pdflatex` のいずれかが見つかれば自動的に PDF を生成します。手動で実行したい場合は下記の通りです。
 
 ```powershell
 pandoc src/main.md `

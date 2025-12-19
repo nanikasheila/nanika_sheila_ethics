@@ -32,9 +32,12 @@ set "ASSETS_DIR=src\assets"
 set "BUILD_DIR=build"
 set "HTML_NAME=nanika_sheila_ethics.html"
 set "EPUB_NAME=nanika_sheila_ethics.epub"
+set "PDF_NAME=nanika_sheila_ethics.pdf"
 set "HTML_OUT=%BUILD_DIR%\%HTML_NAME%"
 set "EPUB_OUT=%BUILD_DIR%\%EPUB_NAME%"
+set "PDF_OUT=%BUILD_DIR%\%PDF_NAME%"
 set "ASSETS_OUT=%BUILD_DIR%\assets"
+set "PDF_HEADER=src\pandoc\latex\preamble.tex"
 set "SITE_DIR=docs"
 set "SITE_INDEX=%SITE_DIR%\index.html"
 set "SITE_ASSETS=%SITE_DIR%\assets"
@@ -65,6 +68,19 @@ set "SRC_MD_REL=..\%SRC_MD%"
 set "META_REL=..\%META%"
 set "FILTER_REL=..\%FILTER%"
 set "RESOURCE_PATH=.;..\\src"
+set "PDF_ENGINE="
+set "PDF_HEADER_REL=..\%PDF_HEADER%"
+set "PDF_MAINFONT=%PDF_MAINFONT%"
+set "PDF_SANFONT=%PDF_SANFONT%"
+set "PDF_MONOFONT=%PDF_MONOFONT%"
+if "%PDF_MAINFONT%"=="" set "PDF_MAINFONT=Yu Mincho"
+if "%PDF_SANFONT%"=="" set "PDF_SANFONT=Yu Gothic"
+if "%PDF_MONOFONT%"=="" set "PDF_MONOFONT=MS Gothic"
+call :try_find_pdf_engine
+if not defined PDF_ENGINE (
+  call :augment_texlive_path
+  call :try_find_pdf_engine
+)
 
 pushd "%BUILD_DIR%"
 
@@ -108,6 +124,55 @@ if errorlevel 1 (
   exit /b 1
 )
 
+REM === Build PDF (if TeX engine exists) ===
+if defined PDF_ENGINE (
+  goto build_pdf
+) else (
+  goto skip_pdf
+)
+
+:build_pdf
+set "SKIP_PDF_BUILD="
+if exist "%PDF_NAME%" (
+  del /f /q "%PDF_NAME%" >nul 2>&1
+  if exist "%PDF_NAME%" (
+    set "SKIP_PDF_BUILD=1"
+  )
+)
+if defined SKIP_PDF_BUILD goto pdf_locked
+pandoc "%SRC_MD_REL%" ^
+  --resource-path="%RESOURCE_PATH%" ^
+  --from=markdown+hard_line_breaks+auto_identifiers+ascii_identifiers ^
+  --wrap=preserve ^
+  --metadata-file="%META_REL%" ^
+  --shift-heading-level-by=-1 ^
+  --toc --toc-depth=2 ^
+  --metadata toc-title="–ÚŽŸ" ^
+  --lua-filter="%FILTER_REL%" ^
+  --include-in-header="%PDF_HEADER_REL%" ^
+  --variable mainfont="%PDF_MAINFONT%" ^
+  --variable romanfont="%PDF_MAINFONT%" ^
+  --variable sansfont="%PDF_SANFONT%" ^
+  --variable monofont="%PDF_MONOFONT%" ^
+  --variable CJKmainfont="%PDF_MAINFONT%" ^
+  --pdf-engine="%PDF_ENGINE%" ^
+  --output "%PDF_NAME%"
+if errorlevel 1 (
+  popd
+  echo [ERROR] pandoc PDF build failed
+  exit /b 1
+)
+goto after_pdf
+
+:pdf_locked
+echo [WARN] Could not overwrite %PDF_NAME% (is it open?). Skipping PDF build.
+goto after_pdf
+
+:skip_pdf
+echo [WARN] No LaTeX engine (xelatex/lualatex/pdflatex) found; skipping PDF build.
+
+:after_pdf
+
 popd
 
 REM === Prepare GitHub Pages site output ===
@@ -150,5 +215,36 @@ if exist "%ASSETS_OUT%" (
 echo [OK] Build finished:
 echo   %HTML_OUT%
 echo   %EPUB_OUT%
+if exist "%PDF_OUT%" echo   %PDF_OUT%
 echo   %SITE_INDEX%
 exit /b 0
+
+:try_find_pdf_engine
+for %%E in (xelatex lualatex pdflatex) do (
+  if not defined PDF_ENGINE (
+    where %%E >nul 2>nul
+    if not errorlevel 1 (
+      set "PDF_ENGINE=%%E"
+    )
+  )
+)
+exit /b
+
+:augment_texlive_path
+for %%B in ("C:\texlive" "%ProgramFiles%\texlive" "%ProgramFiles(x86)%\texlive" "%USERPROFILE%\texlive") do (
+  if exist "%%~B" (
+    for %%P in ("%%~B\bin\windows" "%%~B\bin\win32") do (
+      if exist "%%~P" (
+        set "PATH=%%~P;%PATH%"
+      )
+    )
+    for /d %%V in ("%%~B\*") do (
+      for %%P in ("%%~fV\bin\windows" "%%~fV\bin\win32") do (
+        if exist "%%~P" (
+          set "PATH=%%~P;%PATH%"
+        )
+      )
+    )
+  )
+)
+exit /b
