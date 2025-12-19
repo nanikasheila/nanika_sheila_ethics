@@ -336,46 +336,6 @@ footer {
   }
 }
 
-/* ダークモード対応 */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #121212;
-    --surface-color: #1e1e1e;
-    --text-primary: #e0e0e0;
-    --text-secondary: #b0b0b0;
-    --divider-color: #333333;
-  }
-  body {
-    background-color: var(--background-color);
-    color: var(--text-primary);
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: var(--primary-color);
-  }
-  h2 {
-    background-color: var(--primary-color);
-    color: white;
-  }
-  blockquote {
-    background-color: rgba(30, 30, 30, 0.8);
-    color: var(--text-secondary);
-  }
-  table {
-    background-color: var(--surface-color);
-  }
-  th {
-    background-color: var(--primary-color);
-  }
-  nav#TOC {
-    background-color: var(--surface-color);
-  }
-}
-
 /* 印刷時の最適化強化 */
 @media print {
   html {
